@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--@date 2020/7/16 9:58-->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xw.taes.dao.WardenDao">
+    <select id="findByNoAndPwd" resultType="com.xw.taes.domain.Warden" parameterType="com.xw.taes.domain.Warden">
+        select
+            WID,
+            WNO,
+            WNAME,
+            TEL,
+            WPASSWORD
+        from
+            warden
+        where
+            WNO = #{wNo}
+          and
+            WPASSWORD = #{wPassword}
+    </select>
+</mapper>

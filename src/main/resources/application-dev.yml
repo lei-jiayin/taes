@@ -1,0 +1,25 @@
+# @date 2020/7/17 11:19
+#配置jsp文件位置
+spring:
+#  thymeleaf:
+#    cache: false
+#    enabled: false
+  mvc:
+    view:
+      prefix: /jsp
+      suffix: .jsp
+
+#配置mybatis的信息
+#spring集成mybatis环境
+#pojo别名扫描包
+mybatis:
+  type-aliases-package: com.xw.taes.domain
+  #加载Mybatis映射文件
+  mapper-locations: classpath:mapper/*Mapper.xml
+#logging:
+#  level:
+#    com:
+#      xw:
+#        crawer:
+#          weather:
+#            dao: debug

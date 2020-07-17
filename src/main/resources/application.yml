@@ -1,1 +1,13 @@
 # @date 2020/7/17 10:34
+server:
+  port: 9981
+spring:
+  #配置数据源
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/taes?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    #配置启动文件
+  profiles:
+      active: dev
