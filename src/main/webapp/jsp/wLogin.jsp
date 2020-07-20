@@ -40,7 +40,7 @@ body {
 		<div class="form-group">
 			<label for="wNo" class="col-sm-2 control-label">编号</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="wNo" name="wNo"
+				<input type="text" class="form-control" id="wNo" name="wno"
 					placeholder="no">
 			</div>
 		</div>
@@ -48,7 +48,7 @@ body {
 			<label for="wPassword" class="col-sm-2 control-label">密码</label>
 			<div class="col-sm-6">
 				<input type="password" class="form-control" id="wPassword"
-					name="wPassword" placeholder="Password">
+					name="wpassword" placeholder="Password">
 			</div>
 		</div>
 		<div class="form-group">

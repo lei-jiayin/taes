@@ -13,12 +13,12 @@ $(function() {
 		search : function() {
 			alert($('input[name="keyword"]').val());
 			$('#table1').datagrid('load',{
-				wName : $.trim($('input[name="keyword"]').val()),
+				wname : $.trim($('input[name="keyword"]').val()),
 			});
 		},
 		add : function() {
 			$('#warden_add').dialog('open');
-			$('input[name="wNo"]').focus();
+			$('input[name="wno"]').focus();
 		},
 		edit : function(){
 			var rows = $('#table1').datagrid('getSelections');
@@ -30,10 +30,10 @@ $(function() {
 			} else if(rows.length == 1){
 				//alert(rows[0].wid);
 				$.ajax({
-					url : 'edit.action',
+					url : '/admin/warden/edit',
 					type : 'post',
 					data : {
-						wId : rows[0].wid,
+						wid : rows[0].wid,
 					},
 					beforeSend : function() {
 						$.messager.progress({
@@ -43,13 +43,13 @@ $(function() {
 					success : function(data,response,status) {
 						$.messager.progress('close');
 						if (data) {
-							//console.log(data);
+							console.log(data);
 							
 							$('#warden_edit').form('load',{
-								wId : data.wId,
-								wNo_edit : data.wNo,
-								wName_edit : data.wName,
-								tel_edit : data.tel,
+								wid : data.data.wid,
+								wno_edit : data.data.wno,
+								wname_edit : data.data.wname,
+								tel_edit : data.data.tel,
 								
 							}).dialog('open');
 						}else {
@@ -111,7 +111,7 @@ $(function() {
 	
 	$('#table1').datagrid({
 		title : '管理员列表',
-		url : 'mWarden.action',
+		url : '/admin/warden/mwarden',
 		fitColumns : true,
 		border : false,
 		rownumbers : true,
@@ -170,13 +170,13 @@ $(function() {
 			handler : function() {
 				if ($('#warden_add').form('validate')) {
 					$.ajax({
-						url : 'add.action',
+						url : '/admin/warden/save',
 						type : 'post',
 						data : {
-							wNo : $('input[name="wNo"]').val(),
-							wName : $('input[name="wName"]').val(),
+							wno : $('input[name="wno"]').val(),
+							wname : $('input[name="wname"]').val(),
 							tel : $('input[name="tel"]').val(),
-							wPassword : $('input[name="wPassword"]').val(),
+							wpassword : $('input[name="wpassword"]').val(),
 						},
 						beforeSend : function() {
 							$.messager.progress({
@@ -185,7 +185,7 @@ $(function() {
 						},
 						success : function(data,response,status) {
 							$.messager.progress('close');
-							if (data>0) {
+							if (data.code==1) {
 								$.messager.show({
 									title : '提示',
 									msg : '添加管理员成功！',
@@ -220,14 +220,14 @@ $(function() {
 			handler : function() {
 				if ($('#warden_edit').form('validate')) {
 					$.ajax({
-						url : 'update.action',
+						url : '/admin/warden/save',
 						type : 'post',
 						data : {
-							wId : $('input[name="wId"]').val(),
-							wNo : $('input[name="wNo_edit"]').val(),
-							wName : $('input[name="wName_edit"]').val(),
+							wid : $('input[name="wid"]').val(),
+							wno : $('input[name="wno_edit"]').val(),
+							wname : $('input[name="wname_edit"]').val(),
 							tel : $('input[name="tel_edit"]').val(),
-							wPassword : $('input[name="wPassword_edit"]').val(),
+							wpassword : $('input[name="wpassword_edit"]').val(),
 						},
 						beforeSend : function() {
 							$.messager.progress({
@@ -236,7 +236,7 @@ $(function() {
 						},
 						success : function(data,response,status) {
 							$.messager.progress('close');
-							if (data>0) {
+							if (data.code==1) {
 								$.messager.show({
 									title : '提示',
 									msg : '修改管理员成功！',
@@ -263,14 +263,14 @@ $(function() {
 	
 	
 	//账号验证
-	$('input[name="wNo"]').validatebox({
+	$('input[name="wno"]').validatebox({
 		required : true,
 		validType : 'length[2,20]',
 		missingMessage : '请输入新账号',
 		invalidMessage : '账号在2~20位',
 	});
 	//姓名验证
-	$('input[name="wName"],input[name="wName"]').validatebox({
+	$('input[name="wname"],input[name="wName"]').validatebox({
 		required : true,
 		missingMessage : '请输入姓名',
 	});
@@ -282,14 +282,14 @@ $(function() {
 		//invalidMessage : '电话为8~11位号码',
 	});
 	//密码验证
-	$('input[name="wPassword"]').validatebox({
+	$('input[name="wpassword"]').validatebox({
 		required : true,
 		validType : 'length[3,10]',
 		missingMessage : '请输入初始密码',
 		invalidMessage : '密码长度为3~10位',
 	});
 	//修改密码验证
-	$('input[name="wPassword_edit"]').validatebox({
+	$('input[name="wpassword_edit"]').validatebox({
 		//required : true,
 		validType : 'length[3,10]',
 		//missingMessage : '请输入新密码',

@@ -1,96 +1,87 @@
 package com.xw.taes.controller;
 
 import com.xw.taes.domain.Warden;
+import com.xw.taes.domain.vto.ReturnResult;
 import com.xw.taes.service.WardenService;
+import com.xw.taes.util.WardenTree;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/admin/warden")
 public class WardenAction extends BaseAction {
 
-	// ×¢ÈëÒµÎñ²ãµÄwardenService
 	@Autowired
 	private WardenService wardenService;
 
-	/**
-	 * Ìø×ªµ½µÇÂ¼Ò³Ãæ
-	 * 
-	 * @return
-	 */
+	private final static String SESSION_WARDEN = "warden";
+
 	@GetMapping("/login")
 	public String login() {
 		System.out.println("login");
 		return "/wLogin";
 	}
-	/**
-	 * ¹ÜÀíÔ±µÇÂ¼
-	 * @return
-	 */
+
 	@PostMapping("/login")
-	public String wlogin(Warden warden){
-		System.out.println("--------wardenÖµ=" + warden + "," + "µ±Ç°Àà=WardenAction.wlogin()");
+	public String wlogin(Warden warden, HttpServletRequest request, Model model){
+		System.out.println("--------wardenÖµ=" + warden + "," + "ï¿½ï¿½Ç°ï¿½ï¿½=WardenAction.wlogin()");
 		Warden existLogin = wardenService.findByNoAndPwd(warden);
 		if (existLogin != null){
+			request.getSession().setAttribute(SESSION_WARDEN, existLogin);
+			model.addAttribute("warden", existLogin);
+			System.out.println("--------existLoginÖµ=" + existLogin + "," + "å½“å‰ç±»=WardenAction.wlogin()");
 			return "/warden/index";
 		}else {
 			return "/warden/error";
 		}
 	}
-	/**
-	 * ÍË³öµÇÂ¼
-	 * @return
-	 */
-	public String exit(){
+
+	@GetMapping("/exit")
+	public String exit(HttpServletRequest request){
 		//ActionContext.getContext().getSession().clear();
-		return "exit";
+		request.getSession().removeAttribute(SESSION_WARDEN);
+		return "/wLogin";
 	}
-	/**
-	 * ÏÔÊ¾¹ÜÀíÔ±ĞÅÏ¢
-	 * @return
-	 */
-	public String info(){
+
+	@GetMapping("/info")
+	public String info(HttpServletRequest request, Model model){
+		Warden warden = (Warden) request.getSession().getAttribute(SESSION_WARDEN);
 		/*warden = (Warden) ActionContext.getContext().getSession().get("warden");
 		warden = wardenService.show(warden.getwId());*/
-		return "info";
+		model.addAttribute(SESSION_WARDEN, warden);
+		return "/warden/info";
 	}
-	/**
-	 * ½ÓÊÕajax´«À´µÄ²ÎÊı£¬Ìí¼Óµ½Êı¾İ¿â
-	 * @return
-	 */
-	public String add(HttpServletRequest request,Warden warden){
-		/*System.err.println("µÚÎå´Î£º"+warden.getwNo());
-		System.err.println("µÚÎå´Î£º"+warden.getwName());
-		System.err.println("µÚÎå´Î£º"+warden.getTel());
-		System.err.println("µÚÎå´Î£º"+warden.getwPassword());*/
+
+	@GetMapping("/add")
+	@ResponseBody
+	public ReturnResult add(HttpServletRequest request, Warden warden){
 		int f = wardenService.save(warden);
-		PrintWriter out;
-		System.err.println("µÚÎå´Î£º"+f);
-		return "";
+		if (f > 0){
+			return new ReturnResult("1","",warden.getWid());
+		}else {
+			return new ReturnResult("0","");
+		}
 	}
-	/**
-	 * ±£´æÌí¼ÓµÄ¹ÜÀíÔ±ĞÅÏ¢
-	 * @return
-	 */
+
 	public String addto(Warden warden){
 		wardenService.save(warden);
-		//this.addActionMessage("Ìí¼Ó³É¹¦£¡");
 		return "addto";
 	}
-	/**
-	 * ±à¼­¹ÜÀíÔ±ĞÅÏ¢
-	 * @return
-	 */
-	//°ÑÒª±à¼­µÄjsonÊı¾İ´«¸øÇ°¶Ë
+
 	private JSONObject editData = null;
 	public JSONObject getEditData() {
 		return editData;
@@ -99,117 +90,74 @@ public class WardenAction extends BaseAction {
 		this.editData = editData;
 	}
 
-	public String edit(Warden warden){
-		System.err.println("edit="+warden.getWId());
-		JSONObject editData = wardenService.findById(warden.getWId());
-		return "";
+	@PostMapping("/edit")
+	@ResponseBody
+	public ReturnResult edit(Warden warden){
+		System.err.println("edit="+warden.getWid());
+		Warden editData = wardenService.findById(warden.getWid());
+		return new ReturnResult("1","",editData);
 		
 	}
 	
 	
-	
-	/**
-	 * ĞŞ¸Ä¹ÜÀíÔ±ĞÅÏ¢
-	 * @return
-	 */
-	public String update(Warden warden){
+	@PostMapping("/save")
+	@ResponseBody
+	public ReturnResult update(Warden warden){
 		//warden = (Warden) ActionContext.getContext().getSession().get("warden");
-		int u = 0;
-		u = wardenService.update(warden);
-		return "";
+		int n = 0;
+		if (warden.getWid() != null && warden.getWid() > 0){
+			n = wardenService.update(warden);
+		}else {
+			n = wardenService.save(warden);
+		}
+		if (n > 0){
+			return new ReturnResult<Warden>("1","");
+		}
+		return new ReturnResult("0","");
 	}
-	///**
-	// * ±£´æĞŞ¸ÄºóµÄĞÅÏ¢
-	// * @return
-	// */
-	//public String updateto(){
-	//	wardenService.update(warden);
-	//	this.addActionMessage("ĞŞ¸Ä³É¹¦£¡");
-	//	return "updateto";
-	//}
-	
-	/**
-	 * »ñÈ¡µ¼º½ĞÅÏ¢
-	 * @return
-	 */
-	//µ¼º½µÄjsonÊı¾İ
-	private JSONArray tree = null;
-	public JSONArray getTree() {
-		return tree;
-	}
-	public void setTree(JSONArray tree) {
-		this.tree = tree;
-	}
-	//Ê÷µÄ½Úµãid
-	private String id;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getNav(){
+
+	@PostMapping("/getNav")
+	@ResponseBody
+	public String getNav(String id){
+		Map<String, Object> map = new HashMap<>();
+		if (StringUtils.isBlank(id)){
+			id = "0";
+		}
+		List<WardenTree> tree = wardenService.getNav(id);
 		//tree = wardenService.getNav(id);
-		//System.err.println("id="+id);
+		System.err.println("id="+id);
+		String trees = JSONArray.fromObject(tree).toString();
+		//map.put("tree", trees);
 		//return SUCCESS;
-		return "";
+		return trees;
 	}
+
 	/**
-	 * ¹ÜÀí¹ÜÀíÔ±ĞÅÏ¢
+	 * è·³è½¬åˆ°ç®¡ç†å‘˜é¡µé¢
+	 * @return é¡µé¢
+	 */
+	@GetMapping("/mwarden")
+	public String mWarden(){
+		return "/warden/mwarden";
+	}
+
+	/**
+	 * æŸ¥è¯¢ç®¡ç†å‘˜æ•°æ®
+	 * @param warden
 	 * @return
 	 */
-	//ºóÌ¨½ÓÊÕÊı¾İ µ±Ç°Ò³ Ã¿Ò³ÏÔÊ¾Êı ÅÅĞò×Ö¶Î Ë³Ğò
-	//private PageBean pb = new PageBean();
-/*	private int rows;
-	private int page;
-	private String sort;
-	private String order;
-	public int getRows() {
-		return rows;
+	@PostMapping("mwarden")
+	@ResponseBody
+	public ReturnResult mWarden(Warden warden){
+
+		List<Warden> w1 = wardenService.show(warden);
+		ReturnResult<Warden> returnResult = new ReturnResult<>();
+		returnResult.setCode("1");
+		returnResult.setRows(w1);
+		returnResult.setTotal(wardenService.findCount(warden));
+		return returnResult;
 	}
-	public void setRows(int rows) {
-		this.rows = rows;
-	}
-	public int getPage() {
-		return page;
-	}
-	public void setPage(int page) {
-		this.page = page;
-	}
-	public String getSort() {
-		return sort;
-	}
-	public void setSort(String sort) {
-		this.sort = sort;
-	}
-	public String getOrder() {
-		return order;
-	}
-	public void setOrder(String order) {
-		this.order = order;
-	}
-	//Ç°Ì¨½ÓÊÕjson½á¹û
-	private JSONObject mwa = null;
-	public JSONObject getMwa() {
-		return mwa;
-	}
-	public void setMwa(JSONObject mwa) {
-		this.mwa = mwa;
-	}*/
-	public String mWarden(Warden warden){
-		/*System.err.println("µÚÒ»´Î£º"+rows);
-		System.err.println("µÚer´Î£º"+page);
-		System.err.println("µÚsan´Î£º"+sort);
-		System.err.println("µÚsi´Î£º"+order);
-		System.err.println("µÚÎå´Î£º"+warden.getwName());*/
-		//mwa = wardenService.show(first,rows,sort,order ,warden.getwName());
-		return "";
-	}
-	/**
-	 * É¾³ı¹ÜÀíÔ±ĞÅÏ¢
-	 * @return
-	 */
-	//½ÓÊÕids
+
 	/*private String ids=null;
 	public String getIds() {
 		return ids;

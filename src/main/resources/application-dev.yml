@@ -16,10 +16,9 @@ mybatis:
   type-aliases-package: com.xw.taes.domain
   #加载Mybatis映射文件
   mapper-locations: classpath:mapper/*Mapper.xml
-#logging:
-#  level:
-#    com:
-#      xw:
-#        crawer:
-#          weather:
-#            dao: debug
+logging:
+  level:
+    com:
+      xw:
+        taes:
+          dao: debug

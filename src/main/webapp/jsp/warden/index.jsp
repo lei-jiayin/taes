@@ -25,7 +25,7 @@
 					Taes管理系统
 				</div>
 				<div class="logout">
-					您好，<s:property value="#session.warden.wName"/>|<a href="warden_exit.action">退出</a>
+					您好，<span>${warden.wname}</span>|<a href="/admin/warden/exit">退出</a>
 				</div>
 			</div>
 			<div data-options="region:'west',split:true,title:'导航栏'," style="width: 180px;padding: 10px;">

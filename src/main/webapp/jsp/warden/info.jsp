@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,13 +12,13 @@
 <body>
 	<p>管理员信息</p>
 	<p>
-		管理员账号：<s:property value="%{model.wNo }"/>
+		管理员账号：${warden.wno}
 	</p>
 	<p>
-		姓名：<s:property value="%{model.wName }"/>
+		姓名：${warden.wname}
 	</p>
 	<p>
-		联系电话：<s:property value="%{model.tel }"/>
+		联系电话：${warden.tel}
 	</p>
 </body>
 </html>

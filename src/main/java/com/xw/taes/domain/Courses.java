@@ -4,27 +4,27 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * ©нЁлпео╒
+ * О©╫нЁО©╫О©╫О©╫о╒
  * 
- * @author пэн╟
+ * @author О©╫О©╫н╟
  *
  */
-public class Courses extends DataEntity<Courses>{
-	//жВ╪Э
+public class Courses {
+	//О©╫О©╫О©╫О©╫
 	private Integer coursesId;
-	// ©нЁл╢З╨е
+	// О©╫нЁл╢О©╫О©╫О©╫
 	private String coursesNo;
-	// ©нЁлцШЁф
+	// О©╫нЁО©╫О©╫О©╫О©╫О©╫
 	private String coursesName;
-	// ©нЁля╖╥ж
+	// О©╫нЁО©╫я╖О©╫О©╫
 	private double credits;
 	
-	// р╩це©нЁл╤Юуейт╬М
+	// р╩О©╫е©нЁл╤О©╫О©╫О©╫О©╫т╬О©╫
 	private Set<Paper> papers = new HashSet<>();
 	
-	//р╩╦Жя╖иЗ©иртя║тЯ╤Юце©нЁл р╩╦Ж©нЁл©иртсп╤Ю╦Жя╖иЗ
+	//р╩О©╫О©╫я╖О©╫О©╫О©╫О©╫О©╫О©╫я║О©╫О©╫О©╫О©╫е©нЁО©╫ р╩О©╫О©╫О©╫нЁл©О©╫О©╫О©╫О©╫п╤О©╫О©╫я╖О©╫О©╫
 	//private Set<Score> scores = new HashSet<>();
-	//р╩╦Ж©нЁл©иртси╤Ю╦Жюой╕╫лё╛р╩╦Ж╫лйр╫лйз╤Юце©нЁл
+	//р╩О©╫О©╫О©╫нЁл©О©╫О©╫О©╫О©╫и╤О©╫О©╫О©╫О©╫й╕О©╫лёО©╫р╩О©╫О©╫О©╫О©╫О©╫р╫О©╫О©╫з╤О©╫О©╫е©нЁО©╫
 	private Set<TeacherCourses> teacherCourses = new HashSet<>();
 	
 	public Integer getCoursesId() {

@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class WardenServiceImpl implements WardenService {
 	/**
-	 * ¹ÜÀídao
+	 * ï¿½ï¿½ï¿½ï¿½dao
 	 */
 	@Autowired
 	private WardenDao wardenDao;
@@ -50,29 +50,32 @@ public class WardenServiceImpl implements WardenService {
 
 
 	@Override
-	public JSONArray getNav(String id) {
+	public List<WardenTree> getNav(String id) {
 		// TODO Auto-generated method stub
 		List<WardenTree> data = wardenDao.getNav(id);
-		JSONArray json = new JSONArray();
-         for(WardenTree pLog : data){
-             JSONObject jo = new JSONObject();
-             jo.put("id", pLog.getId());
-             jo.put("text", pLog.getText());
-             jo.put("url", pLog.getUrl());
-             jo.put("state", pLog.getState());
-             jo.put("tid", pLog.getTid());
-             json.add(jo);
-         }
-         System.out.println(json);
-         return json;
+		//JSONArray json = new JSONArray();
+        // for(WardenTree pLog : data){
+        //     JSONObject jo = new JSONObject();
+        //     jo.put("id", pLog.getId());
+        //     jo.put("text", pLog.getText());
+        //     jo.put("url", pLog.getUrl());
+        //     jo.put("state", pLog.getState());
+        //     jo.put("tid", pLog.getTid());
+        //     json.add(jo);
+        // }
+        // System.out.println(json);
+		if (data != null && data.size() > 0){
+			return data;
+		}
+		return null;
 	}
 
 	@Override
-	public List show(int first, int rows, String sort, String order,String wName) {
+	public List<Warden> show(Warden warden) {
 		// TODO Auto-generated method stub
-		List<Warden> list = wardenDao.find(first,rows,sort,order ,wName);
+		List<Warden> list = wardenDao.find(warden);
 		JSONArray jsonA = new JSONArray();
-		for(Warden warden : list){
+		/*for(Warden warden : list){
 			JSONObject jsonB = new JSONObject();
 			jsonB.put("wid", warden.getWId());
 			jsonB.put("wno", warden.getWNo());
@@ -80,30 +83,33 @@ public class WardenServiceImpl implements WardenService {
 			jsonB.put("tel",warden.getTel());
 			//jsonB.put("level", warden.getLevel());
 			jsonA.add(jsonB);
-		}
-		int count = wardenDao.findCount(wName);
-		
+		}*/
+		int count = wardenDao.findCount(warden);
+/*
 		String json = "{"+"\"total\""+":"+count+","+"\"rows\""+":"+jsonA+"}";
 		System.err.println(json);
 		JSONObject js = new JSONObject();
-		js = JSONObject.fromObject(json);
+		js = JSONObject.fromObject(json);*/
 		return list;
 	}
 
 
 
 	@Override
-	public JSONObject findById(int getwId) {
+	public Warden findById(int wid) {
 		// TODO Auto-generated method stub
-		JSONObject list = wardenDao.findById(getwId);
-		JSONObject jsonO = new JSONObject();
-		jsonO = JSONObject.fromObject(list);
-		System.err.println("jsonO="+jsonO);
+		Warden warden = wardenDao.findById(wid);
+		//JSONObject jsonO = new JSONObject();
+		//jsonO = JSONObject.fromObject(list);
+		//System.err.println("jsonO="+jsonO);
 		
-		return jsonO;
+		return warden;
 	}
 
-
+	@Override
+	public int findCount(Warden warden) {
+		return wardenDao.findCount(warden);
+	}
 
 	@Override
 	public int delete(String ids) {

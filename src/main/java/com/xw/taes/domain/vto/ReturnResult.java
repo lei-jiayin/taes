@@ -2,6 +2,7 @@ package com.xw.taes.domain.vto;
 
 import lombok.Data;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,11 +12,14 @@ import java.util.Map;
  * @date 2020/7/17 11:01
  */
 @Data
-public class ReturnResult {
+public class ReturnResult<T> {
     private String code;
     private String message;
     private Object data;
     private Map<String, Object> map;
+    private List<T> rows;
+    private int total;
+    //private int page;
 
     public ReturnResult() {
     }

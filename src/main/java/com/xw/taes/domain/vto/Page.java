@@ -11,13 +11,22 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class PageReturnResult extends ReturnResult {
-    // 接收page rows sort order
+public class Page {
+    /**
+     * 页码
+     */
     private int page;
-    private int size;
+    /**
+     * 每页显示数
+     */
     private int rows;
+    private int first = rows * (page - 1);
+    /**
+     * 默认排序字段
+     */
     private String sort;
+    /**
+     * 升序降序（ASC/DESC）
+     */
     private String order;
-    private int total;
-
 }

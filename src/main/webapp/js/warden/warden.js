@@ -3,11 +3,10 @@
  */
 $(function() {
 	$('#nav').tree({
-		url : 'warden_getNav.action',
+		url : '/admin/warden/getNav',
 		//url : 'warden.json'
-		method : 'GET',
+		method : 'post',
 		lines : true,
-		
 		onClick : function(node) {
 			if (node.url) {
 				if ($('#tabs').tabs('exists',node.text)) {
@@ -19,7 +18,8 @@ $(function() {
 						fit : true,
 						border : false,
 						closable : true,
-						href : node.url + '.jsp',
+						href : node.url,
+						// href : node.url + '.jsp',
 					})
 				}
 			}
