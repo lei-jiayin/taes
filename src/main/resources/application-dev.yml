@@ -13,12 +13,7 @@ spring:
 #spring集成mybatis环境
 #pojo别名扫描包
 mybatis:
-  type-aliases-package: com.xw.taes.domain
+  type-aliases-package: com.xw.taes.warden.domain
   #加载Mybatis映射文件
-  mapper-locations: classpath:mapper/*Mapper.xml
-logging:
-  level:
-    com:
-      xw:
-        taes:
-          dao: debug
+  mapper-locations: classpath:mapper/*/*Mapper.xml
+  config: classpath:log4j2-spring.xml

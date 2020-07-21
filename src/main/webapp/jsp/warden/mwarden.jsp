@@ -42,11 +42,11 @@ padding : 0 2px;
 
 
 <form id="warden_edit" style="margin: 0;padding: 5px 0 0 25px;color: #333;">
-	<input class="textbox" name="wid" type="hidden">
-	<p>账号：<input class="textbox" name="wno_edit" disabled="disabled" id="wNo" type="text" style="width: 200px;"></p>
-	<p>名称：<input class="textbox" name="wname_edit" id="wName" type="text" style="width: 200px;"></p>
+	<input class="textbox" name="wid_edit" id="wid" type="hidden">
+	<p>账号：<input class="textbox" name="wno_edit" disabled="disabled" id="wno" type="text" style="width: 200px;"></p>
+	<p>名称：<input class="textbox" name="wname_edit" id="wname" type="text" style="width: 200px;"></p>
 	<p>电话：<input class="textbox" name="tel_edit" id="tel" type="text" style="width: 200px;"></p>
-	<p>密码：<input class="textbox" name="wpassword_edit" id="wPassword" type="password" style="width: 200px;"></p>
+	<p>密码：<input class="textbox" name="wpassword_edit" id="wpassword" type="password" style="width: 200px;"></p>
 </form>
 
 

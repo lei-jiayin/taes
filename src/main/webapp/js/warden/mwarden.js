@@ -46,7 +46,7 @@ $(function() {
 							console.log(data);
 							
 							$('#warden_edit').form('load',{
-								wid : data.data.wid,
+                                wid_edit : data.data.wid,
 								wno_edit : data.data.wno,
 								wname_edit : data.data.wname,
 								tel_edit : data.data.tel,
@@ -223,7 +223,7 @@ $(function() {
 						url : '/admin/warden/save',
 						type : 'post',
 						data : {
-							wid : $('input[name="wid"]').val(),
+							wid : $('input[name="wid_edit"]').val(),
 							wno : $('input[name="wno_edit"]').val(),
 							wname : $('input[name="wname_edit"]').val(),
 							tel : $('input[name="tel_edit"]').val(),
