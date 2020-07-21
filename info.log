@@ -1,0 +1,87 @@
+13:39:02.723 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 12968 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+13:39:02.732 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+13:39:03.798 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+13:39:03.798 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+13:39:03.799 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+13:39:04.095 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13:39:04.099 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:39:04.744 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+13:39:04.786 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 2.674 seconds (JVM running for 3.889)
+13:39:19.926 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:39:48.450 [http-nio-9981-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:39:48.623 [http-nio-9981-exec-6] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+13:39:48.626 [http-nio-9981-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:43:15.504 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 9264 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+13:43:15.514 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+13:43:16.629 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+13:43:16.629 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+13:43:16.630 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+13:43:16.910 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13:43:16.914 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:43:17.546 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+13:43:17.585 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 2.768 seconds (JVM running for 3.961)
+13:43:28.486 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:43:28.540 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:43:28.705 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+13:43:28.709 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:44:28.464 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 10244 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+13:44:28.473 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+13:44:29.511 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+13:44:29.511 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+13:44:29.512 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+13:44:29.800 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13:44:29.804 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:44:30.452 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+13:44:30.493 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 2.601 seconds (JVM running for 3.769)
+13:44:40.445 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:44:40.498 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:44:40.669 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+13:44:40.673 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:55:28.259 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 12880 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+13:55:28.269 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+13:55:29.362 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+13:55:29.363 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+13:55:29.363 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+13:55:29.648 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13:55:29.652 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:55:30.294 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+13:55:30.335 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 2.75 seconds (JVM running for 3.92)
+13:56:11.552 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:56:11.609 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:56:11.801 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+13:56:11.805 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:58:47.836 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 10644 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+13:58:47.849 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+13:58:49.152 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+13:58:49.152 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+13:58:49.153 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+13:58:49.461 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+13:58:49.466 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:58:50.229 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+13:58:50.275 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 3.313 seconds (JVM running for 4.637)
+14:03:23.038 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 8272 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+14:03:23.052 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+14:03:24.472 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+14:03:24.472 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:03:24.473 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+14:03:24.815 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+14:03:24.819 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:03:25.546 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+14:03:25.593 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 3.661 seconds (JVM running for 5.313)
+14:03:32.725 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:03:32.804 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:03:33.091 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+14:03:33.098 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:06:23.879 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 12504 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+14:06:23.892 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+14:06:25.522 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+14:06:25.523 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:06:25.524 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+14:06:26.043 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+14:06:26.050 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:06:27.819 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+14:06:27.890 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 4.827 seconds (JVM running for 6.394)
+14:06:32.440 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+14:06:32.541 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:06:32.851 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+14:06:32.855 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
