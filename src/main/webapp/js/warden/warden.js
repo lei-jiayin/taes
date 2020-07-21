@@ -3,7 +3,7 @@
  */
 $(function() {
 	$('#nav').tree({
-		url : '/admin/warden/getNav',
+		url : '/sys/menu/getNav',
 		//url : 'warden.json'
 		method : 'post',
 		lines : true,

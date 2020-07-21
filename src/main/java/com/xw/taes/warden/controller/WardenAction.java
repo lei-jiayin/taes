@@ -116,20 +116,6 @@ public class WardenAction extends BaseAction {
 		return new ReturnResult("0");
 	}
 
-	@PostMapping("/getNav")
-	@ResponseBody
-	public String getNav(String id){
-		if (StringUtils.isBlank(id)){
-			id = "0";
-		}
-		List<WardenTree> tree = wardenService.getNav(id);
-		//tree = wardenService.getNav(id);
-		//System.err.println("id="+id);
-		String trees = JSONArray.fromObject(tree).toString();
-		//map.put("tree", trees);
-		//return SUCCESS;
-		return trees;
-	}
 
 	/**
 	 * 跳转到管理员页面

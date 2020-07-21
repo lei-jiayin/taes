@@ -16,7 +16,7 @@ public interface WardenService {
 
 	int update(Warden warden);
 
-	List<WardenTree> getNav(String id);
+	//List<WardenTree> getNav(String id);
 
 	Warden findById(int wid);
 

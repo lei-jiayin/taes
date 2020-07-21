@@ -2,21 +2,6 @@
 <!--@date 2020/7/16 9:58-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xw.taes.warden.dao.WardenDao">
-    <select id="getNav" resultType="com.xw.taes.commons.util.WardenTree">
-        select
-        id,
-        text,
-        url,
-        state,
-        tid
-        from
-        warden_nav
-        <where>
-          <if test="id != null and id != ''">
-              tid = #{id}
-          </if>
-        </where>
-    </select>
     <select id="findByNoAndPwd" resultType="com.xw.taes.warden.domain.Warden" parameterType="com.xw.taes.warden.domain.Warden">
         select
             WID   wid,
