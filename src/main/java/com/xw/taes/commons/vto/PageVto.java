@@ -3,6 +3,8 @@ package com.xw.taes.commons.vto;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * 分页实体
  *
@@ -11,11 +13,15 @@ import lombok.ToString;
  */
 @Data
 @ToString
-public class Page {
+public class PageVto {
     /**
      * 页码
      */
     private int page;
+    /**
+     * 总数
+     */
+    private int total;
     /**
      * 每页显示数
      */
@@ -29,4 +35,6 @@ public class Page {
      * 升序降序（ASC/DESC）
      */
     private String order;
+
+    //private List<T> rows;
 }

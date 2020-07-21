@@ -19,7 +19,7 @@ public class ReturnResult<T> {
     private Map<String, Object> map;
     private List<T> rows;
     private int total;
-    //private int page;
+    //private int pageVto;
 
     public ReturnResult() {
     }

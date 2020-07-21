@@ -1,254 +1,470 @@
-14:06:23.879 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 12504 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
-14:06:23.891 [main] DEBUG com.xw.taes.TaesApplication - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
-14:06:23.892 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
-14:06:24.556 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
-14:06:25.522 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
-14:06:25.523 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
-14:06:25.524 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
-14:06:26.043 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-14:06:26.050 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-14:06:26.275 [main] DEBUG com.zaxxer.hikari.HikariConfig - Driver class com.mysql.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@18b4aac2
-14:06:26.489 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
-14:06:26.496 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.Courses matches criteria [is assignable to Object]
-14:06:26.498 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.Examination matches criteria [is assignable to Object]
-14:06:26.499 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.Paper matches criteria [is assignable to Object]
-14:06:26.500 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.QuestionBank matches criteria [is assignable to Object]
-14:06:26.501 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.Score matches criteria [is assignable to Object]
-14:06:26.501 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.ScoreDetails matches criteria [is assignable to Object]
-14:06:26.502 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.Student matches criteria [is assignable to Object]
-14:06:26.503 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.Teacher matches criteria [is assignable to Object]
-14:06:26.503 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.TeacherCourses matches criteria [is assignable to Object]
-14:06:26.504 [main] DEBUG org.apache.ibatis.io.ResolverUtil - Checking to see if class com.xw.taes.warden.domain.Warden matches criteria [is assignable to Object]
-14:06:27.819 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
-14:06:27.890 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 4.827 seconds (JVM running for 6.394)
-14:06:32.440 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-14:06:32.519 [http-nio-9981-exec-1] DEBUG com.xw.taes.warden.controller.WardenAction - Warden(wid=null, wno=1001, wname=null, tel=null, wpassword=123)
-14:06:32.530 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
-14:06:32.534 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
-14:06:32.534 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
-14:06:32.534 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
-14:06:32.534 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
-14:06:32.534 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
-14:06:32.534 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
-14:06:32.535 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
-14:06:32.535 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
-14:06:32.535 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
-14:06:32.536 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
-14:06:32.536 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName................."com.mysql.jdbc.Driver"
-14:06:32.536 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
-14:06:32.536 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
-14:06:32.536 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
-14:06:32.537 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
-14:06:32.537 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
-14:06:32.537 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
-14:06:32.537 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:mysql://localhost:3306/taes?useUnicode=true&characterEncoding=utf-8
-14:06:32.537 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
-14:06:32.538 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
-14:06:32.538 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
-14:06:32.538 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
-14:06:32.538 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
-14:06:32.538 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
-14:06:32.538 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
-14:06:32.538 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
-14:06:32.539 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
-14:06:32.540 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
-14:06:32.540 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
-14:06:32.540 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
-14:06:32.540 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
-14:06:32.540 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
-14:06:32.540 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - username........................"root"
-14:06:32.540 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
-14:06:32.541 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-14:06:32.851 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
-14:06:32.852 [http-nio-9981-exec-1] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@58677e0b
-14:06:32.855 [http-nio-9981-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-14:06:32.903 [http-nio-9981-exec-1] DEBUG com.xw.taes.warden.dao.WardenDao.findByNoAndPwd - ==>  Preparing: select WID wid, WNO wno, WNAME wname, TEL tel from warden where WNO = ? and WPASSWORD = ? 
-14:06:32.925 [http-nio-9981-exec-1] DEBUG com.xw.taes.warden.dao.WardenDao.findByNoAndPwd - ==> Parameters: 1001(String), 123(String)
-14:06:32.942 [http-nio-9981-exec-1] DEBUG com.xw.taes.warden.dao.WardenDao.findByNoAndPwd - <==      Total: 1
-14:06:32.956 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
-14:06:32.973 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@750de04
-14:06:32.984 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@2285b2ca
-14:06:32.999 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@30bf9732
-14:06:33.009 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@5c61c59c
-14:06:33.017 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@74844862
-14:06:33.025 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@54fd0ba8
-14:06:33.035 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3d2d69
-14:06:33.044 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@3efe7ce5
-14:06:33.053 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.jdbc.JDBC4Connection@7f3b49bd
-14:06:33.053 [HikariPool-1 connection adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
-14:06:34.501 [http-nio-9981-exec-7] DEBUG com.xw.taes.warden.dao.WardenDao.getNav - ==>  Preparing: select id, text, url, state, tid from warden_nav WHERE tid = ? 
-14:06:34.501 [http-nio-9981-exec-7] DEBUG com.xw.taes.warden.dao.WardenDao.getNav - ==> Parameters: 0(String)
-14:06:34.505 [http-nio-9981-exec-7] DEBUG com.xw.taes.warden.dao.WardenDao.getNav - <==      Total: 2
-14:06:34.589 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BooleanConverter - Setting default value: false
-14:06:34.589 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
-14:06:34.589 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BooleanConverter -     No conversion required, value is already a Boolean
-14:06:34.592 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ByteConverter - Setting default value: 0
-14:06:34.592 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
-14:06:34.592 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ByteConverter -     Converted to Byte value '0'
-14:06:34.593 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.CharacterConverter - Setting default value:  
-14:06:34.593 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
-14:06:34.593 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.CharacterConverter -     No conversion required, value is already a Character
-14:06:34.595 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.DoubleConverter - Setting default value: 0
-14:06:34.595 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
-14:06:34.595 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.DoubleConverter -     Converted to Double value '0.0'
-14:06:34.596 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.FloatConverter - Setting default value: 0
-14:06:34.597 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
-14:06:34.597 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.FloatConverter -     Converted to Float value '0.0'
-14:06:34.598 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.IntegerConverter - Setting default value: 0
-14:06:34.598 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
-14:06:34.598 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.IntegerConverter -     No conversion required, value is already a Integer
-14:06:34.599 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.LongConverter - Setting default value: 0
-14:06:34.599 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
-14:06:34.599 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.LongConverter -     Converted to Long value '0'
-14:06:34.600 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ShortConverter - Setting default value: 0
-14:06:34.601 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
-14:06:34.601 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ShortConverter -     Converted to Short value '0'
-14:06:34.602 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BigDecimalConverter - Setting default value: 0.0
-14:06:34.603 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BigDecimalConverter - Converting 'BigDecimal' value '0.0' to type 'BigDecimal'
-14:06:34.603 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BigDecimalConverter -     No conversion required, value is already a BigDecimal
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BigIntegerConverter - Setting default value: 0
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BigIntegerConverter - Converting 'BigInteger' value '0' to type 'BigInteger'
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BigIntegerConverter -     No conversion required, value is already a BigInteger
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BooleanConverter - Setting default value: false
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BooleanConverter - Converting 'Boolean' value 'false' to type 'Boolean'
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.BooleanConverter -     No conversion required, value is already a Boolean
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ByteConverter - Setting default value: 0
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ByteConverter - Converting 'Integer' value '0' to type 'Byte'
-14:06:34.604 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ByteConverter -     Converted to Byte value '0'
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.CharacterConverter - Setting default value:  
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.CharacterConverter - Converting 'Character' value ' ' to type 'Character'
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.CharacterConverter -     No conversion required, value is already a Character
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.DoubleConverter - Setting default value: 0
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.DoubleConverter - Converting 'Integer' value '0' to type 'Double'
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.DoubleConverter -     Converted to Double value '0.0'
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.FloatConverter - Setting default value: 0
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.FloatConverter - Converting 'Integer' value '0' to type 'Float'
-14:06:34.605 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.FloatConverter -     Converted to Float value '0.0'
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.IntegerConverter - Setting default value: 0
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.IntegerConverter - Converting 'Integer' value '0' to type 'Integer'
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.IntegerConverter -     No conversion required, value is already a Integer
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.LongConverter - Setting default value: 0
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.LongConverter - Converting 'Integer' value '0' to type 'Long'
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.LongConverter -     Converted to Long value '0'
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ShortConverter - Setting default value: 0
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ShortConverter - Converting 'Integer' value '0' to type 'Short'
-14:06:34.606 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ShortConverter -     Converted to Short value '0'
-14:06:34.607 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.StringConverter - Setting default value: 
-14:06:34.608 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.StringConverter - Converting 'String' value '' to type 'String'
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Z@106615a6
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'boolean[]' value '[Z@106615a6' to type 'boolean[]'
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a boolean[]
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [B@1d980d30
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'byte[]' value '[B@1d980d30' to type 'byte[]'
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a byte[]
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [C@3fe31da4
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'char[]' value '[C@3fe31da4' to type 'char[]'
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a char[]
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [D@2733b28e
-14:06:34.616 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'double[]' value '[D@2733b28e' to type 'double[]'
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a double[]
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [F@7d848eb
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'float[]' value '[F@7d848eb' to type 'float[]'
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a float[]
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [I@5a7424ad
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'int[]' value '[I@5a7424ad' to type 'int[]'
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a int[]
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [J@7ddd0c7a
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'long[]' value '[J@7ddd0c7a' to type 'long[]'
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a long[]
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [S@4740668d
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'short[]' value '[S@4740668d' to type 'short[]'
-14:06:34.617 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a short[]
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.math.BigDecimal;@29ae19e
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'BigDecimal[]' value '[Ljava.math.BigDecimal;@29ae19e' to type 'BigDecimal[]'
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a BigDecimal[]
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.math.BigInteger;@79b0fc2c
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'BigInteger[]' value '[Ljava.math.BigInteger;@79b0fc2c' to type 'BigInteger[]'
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a BigInteger[]
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Boolean;@6c9b91bc
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Boolean[]' value '[Ljava.lang.Boolean;@6c9b91bc' to type 'Boolean[]'
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Boolean[]
-14:06:34.618 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Byte;@28abf6ac
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Byte[]' value '[Ljava.lang.Byte;@28abf6ac' to type 'Byte[]'
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Byte[]
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Character;@7de86436
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Character[]' value '[Ljava.lang.Character;@7de86436' to type 'Character[]'
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Character[]
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Double;@347a63b
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Double[]' value '[Ljava.lang.Double;@347a63b' to type 'Double[]'
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Double[]
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Float;@3361d19e
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Float[]' value '[Ljava.lang.Float;@3361d19e' to type 'Float[]'
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Float[]
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Integer;@44884fc8
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Integer[]' value '[Ljava.lang.Integer;@44884fc8' to type 'Integer[]'
-14:06:34.619 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Integer[]
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Long;@7a7f5abb
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Long[]' value '[Ljava.lang.Long;@7a7f5abb' to type 'Long[]'
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Long[]
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Short;@44b75db1
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Short[]' value '[Ljava.lang.Short;@44b75db1' to type 'Short[]'
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Short[]
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.String;@79e78998
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'String[]' value '[Ljava.lang.String;@79e78998' to type 'String[]'
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a String[]
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.lang.Class;@7f177f63
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Class[]' value '[Ljava.lang.Class;@7f177f63' to type 'Class[]'
-14:06:34.620 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Class[]
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.util.Date;@7f3d58b8
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Date[]' value '[Ljava.util.Date;@7f3d58b8' to type 'Date[]'
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Date[]
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.util.Calendar;@119c83b
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'Calendar[]' value '[Ljava.util.Calendar;@119c83b' to type 'Calendar[]'
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a Calendar[]
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.io.File;@dfa953
-14:06:34.621 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'java.io.File[]' value '[Ljava.io.File;@dfa953' to type 'java.io.File[]'
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a java.io.File[]
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.sql.Date;@1532c968
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'java.sql.Date[]' value '[Ljava.sql.Date;@1532c968' to type 'java.sql.Date[]'
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a java.sql.Date[]
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.sql.Time;@2779db1a
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'java.sql.Time[]' value '[Ljava.sql.Time;@2779db1a' to type 'java.sql.Time[]'
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a java.sql.Time[]
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.sql.Timestamp;@59eb9034
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'java.sql.Timestamp[]' value '[Ljava.sql.Timestamp;@59eb9034' to type 'java.sql.Timestamp[]'
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a java.sql.Timestamp[]
-14:06:34.622 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Setting default value: [Ljava.net.URL;@46efa5a2
-14:06:34.623 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter - Converting 'java.net.URL[]' value '[Ljava.net.URL;@46efa5a2' to type 'java.net.URL[]'
-14:06:34.623 [http-nio-9981-exec-7] DEBUG org.apache.commons.beanutils.converters.ArrayConverter -     No conversion required, value is already a java.net.URL[]
-14:06:36.521 [http-nio-9981-exec-2] DEBUG com.xw.taes.warden.dao.WardenDao.getNav - ==>  Preparing: select id, text, url, state, tid from warden_nav WHERE tid = ? 
-14:06:36.522 [http-nio-9981-exec-2] DEBUG com.xw.taes.warden.dao.WardenDao.getNav - ==> Parameters: 1(String)
-14:06:36.526 [http-nio-9981-exec-2] DEBUG com.xw.taes.warden.dao.WardenDao.getNav - <==      Total: 3
-14:06:37.649 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.find - ==>  Preparing: select WID wid, WNO wno, WNAME wname, TEL tel from warden order by ?,? limit ?,? 
-14:06:37.650 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.find - ==> Parameters: wid(String), ASC(String), 0(Integer), 5(Integer)
-14:06:37.651 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.find - <==      Total: 3
-14:06:37.652 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==>  Preparing: select count(1) from warden 
-14:06:37.652 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==> Parameters: 
-14:06:37.655 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - <==      Total: 1
-14:06:37.658 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==>  Preparing: select count(1) from warden 
-14:06:37.658 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==> Parameters: 
-14:06:37.660 [http-nio-9981-exec-5] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - <==      Total: 1
-14:06:50.129 [http-nio-9981-exec-3] DEBUG com.xw.taes.warden.dao.WardenDao.findById - ==>  Preparing: select WID wid, WNO wno, WNAME wname, TEL tel from warden where WID = ? 
-14:06:50.129 [http-nio-9981-exec-3] DEBUG com.xw.taes.warden.dao.WardenDao.findById - ==> Parameters: 2(Integer)
-14:06:50.131 [http-nio-9981-exec-3] DEBUG com.xw.taes.warden.dao.WardenDao.findById - <==      Total: 1
-14:07:01.349 [http-nio-9981-exec-8] DEBUG com.xw.taes.warden.controller.WardenAction - save：2
-14:07:01.350 [http-nio-9981-exec-8] DEBUG com.xw.taes.warden.dao.WardenDao.update - ==>  Preparing: update warden set WNAME=?,TEL=? where WID = ? 
-14:07:01.351 [http-nio-9981-exec-8] DEBUG com.xw.taes.warden.dao.WardenDao.update - ==> Parameters: 熊伟(String), 123456(String), 2(Integer)
-14:07:01.352 [http-nio-9981-exec-8] DEBUG com.xw.taes.warden.dao.WardenDao.update - <==    Updates: 1
-14:07:01.418 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.find - ==>  Preparing: select WID wid, WNO wno, WNAME wname, TEL tel from warden order by ?,? limit ?,? 
-14:07:01.418 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.find - ==> Parameters: wid(String), ASC(String), 0(Integer), 5(Integer)
-14:07:01.419 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.find - <==      Total: 3
-14:07:01.420 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==>  Preparing: select count(1) from warden 
-14:07:01.420 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==> Parameters: 
-14:07:01.421 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - <==      Total: 1
-14:07:01.422 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==>  Preparing: select count(1) from warden 
-14:07:01.422 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - ==> Parameters: 
-14:07:01.423 [http-nio-9981-exec-6] DEBUG com.xw.taes.warden.dao.WardenDao.findCount - <==      Total: 1
-14:07:02.958 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
-14:07:02.958 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
-14:07:32.960 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
-14:07:32.960 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
-14:08:02.962 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
-14:08:02.962 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
-14:08:32.964 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
-14:08:32.964 [HikariPool-1 housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+18:03:46.532 [main] INFO  com.xw.taes.TaesApplication - Starting TaesApplication on A9 with PID 9128 (D:\workspace2020\taes\target\classes started by Administrator in D:\workspace2020\taes)
+18:03:46.541 [main] DEBUG com.xw.taes.TaesApplication - Running with Spring Boot v2.3.1.RELEASE, Spring v5.2.7.RELEASE
+18:03:46.541 [main] INFO  com.xw.taes.TaesApplication - The following profiles are active: dev
+18:03:47.253 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+18:03:47.933 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9981"]
+18:03:47.933 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+18:03:47.933 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+18:03:48.249 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18:03:48.254 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+18:03:48.370 [main] DEBUG com.zaxxer.hikari.HikariConfig - Driver class com.mysql.jdbc.Driver found in Thread context class loader sun.misc.Launcher$AppClassLoader@18b4aac2
+18:03:48.448 [main] DEBUG org.apache.ibatis.io.VFS - Using VFS adapter org.mybatis.spring.boot.autoconfigure.SpringBootVFS
+18:03:48.954 [main] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - initialising the handler methods
+18:03:48.958 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+18:03:49.190 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9981"]
+18:03:49.224 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+18:03:49.241 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+18:03:49.258 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Total number of request handlers 14
+18:03:49.259 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/edit], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/edit], supportedMethods=[POST], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.259 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/exit], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/exit], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/info], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/info], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/login], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/login], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/login], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/login], supportedMethods=[POST], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/mwarden], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/mwarden], supportedMethods=[POST], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/mwarden], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/mwarden], supportedMethods=[GET], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/admin/warden/save], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/admin/warden/save], supportedMethods=[POST], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/error], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/error], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.260 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/error], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/error], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[text/html]}}
+18:03:49.261 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/swagger-resources/configuration/security], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/swagger-resources/configuration/security], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.261 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/swagger-resources/configuration/ui], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/swagger-resources/configuration/ui], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.261 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/swagger-resources], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/swagger-resources], supportedMethods=[], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.261 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Adding key: [/sys/menu/getNav], WebMvcRequestHandler{key=RequestHandlerKey{pathMappings=[/sys/menu/getNav], supportedMethods=[POST], supportedMediaTypes=[], producibleMediaTypes=[]}}
+18:03:49.279 [main] DEBUG springfox.documentation.spring.web.plugins.DefaultRequestHandlerCombiner - Combined number of request handlers 14
+18:03:49.280 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+18:03:49.293 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;
+18:03:49.294 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |error|
+18:03:49.295 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |error|
+18:03:49.296 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |error|
+18:03:49.304 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Skipping model of type Ljava/lang/Object; as its either a container type, map, enum or base type, or its already been handled
+18:03:49.306 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Did not find any parameter models for java.util.Map<java.lang.String,java.lang.Object>
+18:03:49.306 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Marking base type Ljava/lang/Object; as seen
+18:03:49.317 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.318 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.319 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.324 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.324 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.324 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.326 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.326 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.326 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.327 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.328 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.328 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.329 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.330 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.330 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.332 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.332 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.332 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.334 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.334 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.334 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.335 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: Map«string,object»
+18:03:49.336 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:Map«string,object»
+18:03:49.336 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method error
+18:03:49.349 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Lorg/springframework/web/servlet/ModelAndView;
+18:03:49.349 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |errorHtml|
+18:03:49.349 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |errorHtml|
+18:03:49.349 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |errorHtml|
+18:03:49.373 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property view
+18:03:49.377 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getView
+18:03:49.378 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'view' renamed to 'view'
+18:03:49.378 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property view to model
+18:03:49.378 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getView
+18:03:49.378 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getView
+18:03:49.378 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getView
+18:03:49.379 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getView
+18:03:49.380 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property model
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModel
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'model' renamed to 'model'
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property model to model
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModel
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModel
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModel
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModel
+18:03:49.381 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property status
+18:03:49.382 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getStatus
+18:03:49.382 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'status' renamed to 'status'
+18:03:49.382 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property status to model
+18:03:49.382 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getStatus
+18:03:49.382 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getStatus
+18:03:49.382 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getStatus
+18:03:49.382 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getStatus
+18:03:49.388 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property empty
+18:03:49.388 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isEmpty
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'empty' renamed to 'empty'
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property empty to model
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isEmpty
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isEmpty
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isEmpty
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isEmpty
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property viewName
+18:03:49.389 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getViewName
+18:03:49.390 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'viewName' renamed to 'viewName'
+18:03:49.390 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property viewName to model
+18:03:49.390 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getViewName
+18:03:49.390 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getViewName
+18:03:49.390 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getViewName
+18:03:49.390 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getViewName
+18:03:49.390 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property modelMap
+18:03:49.391 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModelMap
+18:03:49.391 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'modelMap' renamed to 'modelMap'
+18:03:49.391 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property modelMap to model
+18:03:49.391 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModelMap
+18:03:49.391 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModelMap
+18:03:49.392 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModelMap
+18:03:49.392 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getModelMap
+18:03:49.392 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property reference
+18:03:49.393 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isReference
+18:03:49.393 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'reference' renamed to 'reference'
+18:03:49.393 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property reference to model
+18:03:49.393 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isReference
+18:03:49.393 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isReference
+18:03:49.393 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isReference
+18:03:49.393 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member isReference
+18:03:49.396 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Inferred 7 properties. Properties found empty, model, modelMap, reference, status, view, viewName
+18:03:49.397 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Generated parameter model id: ModelAndView, name: ModelAndView, schema: {} models
+18:03:49.397 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Adding a new model with key ModelAndView
+18:03:49.398 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Adding type Lorg/springframework/ui/ModelMap; for parameter modelMap
+18:03:49.398 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Recursively resolving dependencies for value type Ljava/lang/Object;
+18:03:49.398 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Marking base type Ljava/lang/Object; as seen
+18:03:49.398 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Adding type Lorg/springframework/web/servlet/View; for parameter view
+18:03:49.398 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Recursively resolving dependencies for type Lorg/springframework/web/servlet/View;
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property contentType
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getContentType
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'contentType' renamed to 'contentType'
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property contentType to model
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getContentType
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getContentType
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getContentType
+18:03:49.399 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getContentType
+18:03:49.400 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Inferred 1 properties. Properties found contentType
+18:03:49.400 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Adding a new model with key View
+18:03:49.401 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.401 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.401 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.402 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.402 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.402 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.403 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.403 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.403 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.404 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.404 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.404 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.406 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.407 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.407 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.409 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.409 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.409 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.410 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.410 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.411 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.411 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ModelAndView
+18:03:49.411 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ModelAndView
+18:03:49.412 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method errorHtml
+18:03:49.427 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Ljava/lang/String;
+18:03:49.428 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |getNav|
+18:03:49.428 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |getNav|
+18:03:49.428 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |getNav|
+18:03:49.428 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Skipping model of type Ljava/lang/String; as its either a container type, map, enum or base type, or its already been handled
+18:03:49.428 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Did not find any parameter models for java.lang.String
+18:03:49.428 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Marking base type Ljava/lang/String; as seen
+18:03:49.435 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: string
+18:03:49.435 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:string
+18:03:49.435 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method getNav
+18:03:49.437 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Lcom/xw/taes/commons/vto/ReturnResult;
+18:03:49.437 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |edit|
+18:03:49.438 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |edit|
+18:03:49.438 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |edit|
+18:03:49.439 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property code
+18:03:49.441 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getCode
+18:03:49.441 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'code' renamed to 'code'
+18:03:49.441 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property code to model
+18:03:49.441 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getCode
+18:03:49.441 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getCode
+18:03:49.441 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getCode
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getCode
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property message
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'message' renamed to 'message'
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property message to model
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMessage
+18:03:49.442 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property data
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getData
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'data' renamed to 'data'
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property data to model
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getData
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getData
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getData
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getData
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property map
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMap
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'map' renamed to 'map'
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property map to model
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMap
+18:03:49.443 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMap
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMap
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getMap
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property rows
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getRows
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'rows' renamed to 'rows'
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property rows to model
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getRows
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getRows
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getRows
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getRows
+18:03:49.444 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Reading property total
+18:03:49.445 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getTotal
+18:03:49.445 [main] DEBUG springfox.documentation.schema.property.ObjectMapperBeanPropertyNamingStrategy - Name 'total' renamed to 'total'
+18:03:49.445 [main] DEBUG springfox.documentation.schema.property.OptimizedModelPropertiesProvider - Adding property total to model
+18:03:49.445 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getTotal
+18:03:49.445 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getTotal
+18:03:49.445 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getTotal
+18:03:49.445 [main] DEBUG springfox.documentation.schema.property.bean.BeanModelProperty - Evaluating unwrapped getter for member getTotal
+18:03:49.445 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Inferred 6 properties. Properties found code, data, map, message, rows, total
+18:03:49.445 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Generated parameter model id: ReturnResult, name: ReturnResult, schema: {} models
+18:03:49.445 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Adding a new model with key ReturnResult
+18:03:49.445 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Adding type Ljava/util/List<Ljava/lang/Object;>; for parameter rows
+18:03:49.446 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Recursively resolving dependencies for collectionElement type Ljava/lang/Object;
+18:03:49.446 [main] DEBUG springfox.documentation.schema.DefaultModelDependencyProvider - Marking base type Ljava/lang/Object; as seen
+18:03:49.446 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Skipping model of type Ljava/util/List<Ljava/lang/Object;>; as its either a container type, map, enum or base type, or its already been handled
+18:03:49.460 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.warden.domain.Warden
+18:03:49.467 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: updateBy
+18:03:49.469 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.471 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: createBy
+18:03:49.471 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.471 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: pageVto
+18:03:49.473 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.commons.vto.PageVto
+18:03:49.473 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@218df7d6
+18:03:49.473 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@218df7d6, with type: 
+18:03:49.475 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@295b07e0
+18:03:49.475 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@295b07e0, with type: 
+18:03:49.475 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@55053f81
+18:03:49.475 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@55053f81, with type: 
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1fee4278
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1fee4278, with type: 
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@51132514
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@51132514, with type: 
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@20864cd1
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@20864cd1, with type: 
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@d3cce46
+18:03:49.476 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@d3cce46, with type: 
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@30eedaa4
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@30eedaa4, with type: 
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@52b30054
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@52b30054, with type: 
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7f6b57f2
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7f6b57f2, with type: 
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@144ee8a7
+18:03:49.477 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@144ee8a7, with type: 
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@52b32b70
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@52b32b70, with type: 
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@18c820d2
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@18c820d2, with type: 
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5e51ec2e
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5e51ec2e, with type: 
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@15f2a43f
+18:03:49.478 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@15f2a43f, with type: 
+18:03:49.479 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ReturnResult
+18:03:49.480 [main] DEBUG springfox.documentation.swagger.readers.operation.VendorExtensionsReader - Extension count 1 for method edit
+18:03:49.480 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ReturnResult
+18:03:49.481 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method edit
+18:03:49.484 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Ljava/lang/String;
+18:03:49.484 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |exit|
+18:03:49.484 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |exit|
+18:03:49.484 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |exit|
+18:03:49.484 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Did not find any parameter models for java.lang.String
+18:03:49.485 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: string
+18:03:49.485 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:string
+18:03:49.485 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method exit
+18:03:49.486 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Ljava/lang/String;
+18:03:49.486 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |info|
+18:03:49.486 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |info|
+18:03:49.486 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |info|
+18:03:49.486 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Did not find any parameter models for java.lang.String
+18:03:49.488 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: org.springframework.ui.Model
+18:03:49.489 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: string
+18:03:49.489 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:string
+18:03:49.489 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method info
+18:03:49.489 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Ljava/lang/String;
+18:03:49.489 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |login|
+18:03:49.489 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |login|
+18:03:49.490 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |login|
+18:03:49.490 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Did not find any parameter models for java.lang.String
+18:03:49.490 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: string
+18:03:49.490 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:string
+18:03:49.490 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method login
+18:03:49.491 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Lcom/xw/taes/commons/vto/ReturnResult;
+18:03:49.491 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |mWarden|
+18:03:49.491 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |mWarden|
+18:03:49.491 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |mWarden|
+18:03:49.491 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Generated parameter model id: ReturnResult, name: ReturnResult, schema: {} models
+18:03:49.491 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Skipping model of type Ljava/util/List<Ljava/lang/Object;>; as its either a container type, map, enum or base type, or its already been handled
+18:03:49.492 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.commons.vto.PageVto
+18:03:49.492 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1573e8a5
+18:03:49.492 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1573e8a5, with type: 
+18:03:49.492 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@38022758
+18:03:49.492 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@38022758, with type: 
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@69f9b561
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@69f9b561, with type: 
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7e8f23ad
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7e8f23ad, with type: 
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7433ca19
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7433ca19, with type: 
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5d221b20
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5d221b20, with type: 
+18:03:49.493 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.warden.domain.Warden
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: updateBy
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: createBy
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: pageVto
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.commons.vto.PageVto
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@71b0289b
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@71b0289b, with type: 
+18:03:49.494 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@42cc420b
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@42cc420b, with type: 
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@563172d3
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@563172d3, with type: 
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5086623f
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5086623f, with type: 
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@20027c44
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@20027c44, with type: 
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7eae55
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7eae55, with type: 
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@79d4ff58
+18:03:49.495 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@79d4ff58, with type: 
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7ec13984
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7ec13984, with type: 
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@14485747
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@14485747, with type: 
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@59fea5f5
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@59fea5f5, with type: 
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@78eafad
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@78eafad, with type: 
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@70f4abc1
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@70f4abc1, with type: 
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@26d028f7
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@26d028f7, with type: 
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@782cc5fa
+18:03:49.496 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@782cc5fa, with type: 
+18:03:49.497 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2dd3d39d
+18:03:49.497 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2dd3d39d, with type: 
+18:03:49.497 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ReturnResult
+18:03:49.497 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ReturnResult
+18:03:49.497 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method mWarden
+18:03:49.498 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Ljava/lang/String;
+18:03:49.498 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |mWarden|
+18:03:49.498 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |mWarden|
+18:03:49.498 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |mWarden|
+18:03:49.498 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Did not find any parameter models for java.lang.String
+18:03:49.499 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: string
+18:03:49.499 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:string
+18:03:49.499 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method mWarden
+18:03:49.500 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Lcom/xw/taes/commons/vto/ReturnResult;
+18:03:49.500 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |update|
+18:03:49.500 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |update|
+18:03:49.500 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |update|
+18:03:49.500 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Generated parameter model id: ReturnResult, name: ReturnResult, schema: {} models
+18:03:49.500 [main] DEBUG springfox.documentation.schema.DefaultModelProvider - Skipping model of type Ljava/util/List<Ljava/lang/Object;>; as its either a container type, map, enum or base type, or its already been handled
+18:03:49.501 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.warden.domain.Warden
+18:03:49.501 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: updateBy
+18:03:49.501 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.501 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: createBy
+18:03:49.501 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.501 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: pageVto
+18:03:49.502 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.commons.vto.PageVto
+18:03:49.502 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@18989e0
+18:03:49.502 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@18989e0, with type: 
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2a120c88
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2a120c88, with type: 
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@285bf5ac
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@285bf5ac, with type: 
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3739f3c9
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3739f3c9, with type: 
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7ab2ba47
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7ab2ba47, with type: 
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@40fe8fd5
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@40fe8fd5, with type: 
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@da34eb0
+18:03:49.503 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@da34eb0, with type: 
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@785a4557
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@785a4557, with type: 
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2bf3ec4
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2bf3ec4, with type: 
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3b5da0b0
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@3b5da0b0, with type: 
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2c9cafa5
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2c9cafa5, with type: 
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@6c6379c
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@6c6379c, with type: 
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7df4709e
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@7df4709e, with type: 
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@625264ed
+18:03:49.504 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@625264ed, with type: 
+18:03:49.505 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@559fd5ec
+18:03:49.505 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@559fd5ec, with type: 
+18:03:49.505 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: ReturnResult
+18:03:49.505 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:ReturnResult
+18:03:49.505 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method update
+18:03:49.506 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Adding return parameter of type Ljava/lang/String;
+18:03:49.506 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Reading parameters models for handlerMethod |wlogin|
+18:03:49.506 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationModelsProvider - Finished reading parameters models for handlerMethod |wlogin|
+18:03:49.506 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationModelsProvider - Reading parameters models for handlerMethod |wlogin|
+18:03:49.506 [main] DEBUG springfox.documentation.spring.web.scanners.ApiModelReader - Did not find any parameter models for java.lang.String
+18:03:49.507 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.warden.domain.Warden
+18:03:49.507 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: updateBy
+18:03:49.507 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.507 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: createBy
+18:03:49.507 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.sys.domain.User
+18:03:49.507 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand expandable property: pageVto
+18:03:49.507 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: com.xw.taes.commons.vto.PageVto
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@74ce7fdf
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@74ce7fdf, with type: 
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1f26b992
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1f26b992, with type: 
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2f60cbf2
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@2f60cbf2, with type: 
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@631bc9f4
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@631bc9f4, with type: 
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@642c72cf
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@642c72cf, with type: 
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4e6cbdf1
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4e6cbdf1, with type: 
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4fa0ee7e
+18:03:49.508 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4fa0ee7e, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@202f054f
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@202f054f, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@141bb6b8
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@141bb6b8, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5c8b10b4
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5c8b10b4, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1410d645
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@1410d645, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4ccdacf5
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@4ccdacf5, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5aa6da2
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@5aa6da2, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@13908f9c
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@13908f9c, with type: 
+18:03:49.509 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Attempting to expand field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@329b331f
+18:03:49.510 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Building parameter for field: springfox.documentation.spring.web.readers.parameter.ModelAttributeField@329b331f, with type: 
+18:03:49.510 [main] DEBUG springfox.documentation.spring.web.readers.parameter.ModelAttributeParameterExpander - Expanding parameter type: org.springframework.ui.Model
+18:03:49.510 [main] DEBUG springfox.documentation.spring.web.readers.operation.OperationResponseClassReader - Setting spring response class to: string
+18:03:49.510 [main] DEBUG springfox.documentation.swagger.readers.operation.SwaggerOperationResponseClassReader - Setting response class to:string
+18:03:49.510 [main] DEBUG springfox.documentation.swagger.readers.operation.OperationAuthReader - Authorization count 0 for method wlogin
+18:03:49.531 [main] INFO  com.xw.taes.TaesApplication - Started TaesApplication in 3.648 seconds (JVM running for 4.883)
+18:03:59.294 [http-nio-9981-exec-1] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+18:03:59.314 [http-nio-9981-exec-1] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /admin/warden/login
+18:04:00.073 [http-nio-9981-exec-3] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /js/bootstrap.min.js
+18:04:00.073 [http-nio-9981-exec-2] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /js/jquery-3.2.1.min.js
+18:04:00.074 [http-nio-9981-exec-5] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /vCode.action
+18:04:00.075 [http-nio-9981-exec-4] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /css/bootstrap.min.css
+18:04:00.080 [http-nio-9981-exec-5] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /error
+18:04:00.190 [http-nio-9981-exec-6] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /css/bootstrap.min.css.map
+18:04:00.192 [http-nio-9981-exec-6] DEBUG springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping - looking up handler for path: /error

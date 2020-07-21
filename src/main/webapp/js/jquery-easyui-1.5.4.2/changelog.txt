@@ -172,8 +172,8 @@ Version 1.4.2
  * menubutton: Add 'hasDownArrow' property.
 * New Plugins
  * datalist: The plugin to render items in a list.
- * navpanel: The root component for the mobile page.
- * mobile: The plugin to provide the mobile page stack management and navigation.
+ * navpanel: The root component for the mobile pageVto.
+ * mobile: The plugin to provide the mobile pageVto stack management and navigation.
 
 Version 1.4.1
 -------------
@@ -282,7 +282,7 @@ Version 1.3.4
  * tree: Add 'scrollTo' method.
  * datagrid: The 'multiSort' property is added to support multiple column sorting.
  * datagrid: The 'rowStyler' and column 'styler' can return CSS class name or inline styles.
- * treegrid: Add 'load' method to load data and navigate to the first page.
+ * treegrid: Add 'load' method to load data and navigate to the first pageVto.
  * tabs: Add 'tabWidth' and 'tabHeight' properties.
  * validatebox: The 'novalidate' property is available to indicate whether to perform the validation.
  * validatebox: Add 'enableValidation' and 'disableValidation' methods.
@@ -420,7 +420,7 @@ Version 1.2.6
 Version 1.2.5
 -------------
 * Bug
- * tabs: When add a new tab panel with href property, the content page is loaded twice. fixed.
+ * tabs: When add a new tab panel with href property, the content pageVto is loaded twice. fixed.
  * form: Failed to call 'load' method to load form input with complex name. fixed.
  * draggable: End drag in ie9, the cursor cannot be restored. fixed.
 * Improvement
@@ -555,9 +555,9 @@ Version 1.1
  * combobox: The editable property of combobox plugin is invalid. fixed.
  * window: The proxy box will not be removed when dragging or resizing exceed browser border in ie. fixed.
 * Improvement
- * menu: The menu item can use <a> markup to display a different page.
+ * menu: The menu item can use <a> markup to display a different pageVto.
  * tree: The tree node can use <a> markup to act as a tree menu.
- * pagination: Add some event on refresh button and page list.
+ * pagination: Add some event on refresh button and pageVto list.
  * datagrid: Add a 'param' parameter for reload method, with which users can pass query parameter when reload data.
  * numberbox: Add required validation support, the usage is same as validatebox plugin.
  * combobox: Add required validation support.
@@ -565,15 +565,15 @@ Version 1.1
  * layout: Add some method that can get a region panel and attach event handlers.
 * New Plugins
  * droppable: A droppable plugin that supports drag drop operation.
- * calendar: A calendar plugin that can either be embedded within a page or popup.
+ * calendar: A calendar plugin that can either be embedded within a pageVto or popup.
  * datebox: Combines a textbox with a calendar that let users to select date.
- * easyloader: A JavaScript loader that allows you to load plugin and their dependencies into your page.
+ * easyloader: A JavaScript loader that allows you to load plugin and their dependencies into your pageVto.
  
 Version 1.0.5
 * Bug
  * panel: The fit property of panel performs incorrectly. fixed.
 * Improvement
- * menu: Add a href attribute for menu item, with which user can display a different page in the current browser window.
+ * menu: Add a href attribute for menu item, with which user can display a different pageVto in the current browser window.
  * form: Add a validate method to do validation for validatebox component.
  * dialog: The dialog can read collapsible,minimizable,maximizable and resizable attribute from markup.
 * New Plugins

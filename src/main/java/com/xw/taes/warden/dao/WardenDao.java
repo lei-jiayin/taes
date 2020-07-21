@@ -1,6 +1,7 @@
 package com.xw.taes.warden.dao;
 
 
+import com.xw.taes.commons.base.CrudDao;
 import com.xw.taes.warden.domain.Warden;
 import com.xw.taes.commons.util.WardenTree;
 import org.apache.ibatis.annotations.Param;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface WardenDao extends CrudeDao<Warden> {
+public interface WardenDao extends CrudDao<Warden> {
 
 	Warden findByNoAndPwd(Warden warden);
 
@@ -17,6 +18,7 @@ public interface WardenDao extends CrudeDao<Warden> {
 
 	int save(Warden warden);
 
+	@Override
 	int update(Warden warden);
 
 	List<WardenTree> getNav(@Param("id") String id);
@@ -27,6 +29,7 @@ public interface WardenDao extends CrudeDao<Warden> {
 
 	Warden findById(int getwId);
 
+	@Override
 	int delete(String ids);
 	
 

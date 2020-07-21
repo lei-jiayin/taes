@@ -1,11 +1,11 @@
 package com.xw.taes.warden.controller;
 
 import com.xw.taes.commons.base.BaseAction;
+import com.xw.taes.commons.vto.PageVto;
 import com.xw.taes.warden.domain.Warden;
 import com.xw.taes.commons.vto.ReturnResult;
 import com.xw.taes.warden.service.WardenService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -131,8 +131,9 @@ public class WardenAction extends BaseAction {
 	 */
 	@PostMapping("mwarden")
 	@ResponseBody
-	public ReturnResult mWarden(Warden warden){
-
+	public ReturnResult mWarden(PageVto pageVto, Warden warden){
+		log.debug("mWarden：" + pageVto.toString());
+		warden.setPageVto(pageVto);
 		List<Warden> w1 = wardenService.show(warden);
 		ReturnResult<Warden> returnResult = new ReturnResult<>();
 		returnResult.setCode("1");

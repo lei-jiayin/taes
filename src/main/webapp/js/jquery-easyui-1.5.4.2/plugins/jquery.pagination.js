@@ -33,7 +33,7 @@ aa.pop();
 for(var _7=0;_7<aa.length;_7++){
 var _8=aa[_7];
 if(_8=="list"){
-var ps=$("<select class=\"pagination-page-list\"></select>");
+var ps=$("<select class=\"pagination-pageVto-list\"></select>");
 ps.bind("change",function(){
 _4.pageSize=parseInt($(this).val());
 _4.onChangePageSize.call(_2,_4.pageSize);
@@ -142,7 +142,7 @@ var _17=$.data(_15,"pagination");
 var _18=_17.options;
 var bb=_17.bb;
 $.extend(_18,_16||{});
-var ps=$(_15).find("select.pagination-page-list");
+var ps=$(_15).find("select.pagination-pageVto-list");
 if(ps.length){
 ps.val(_18.pageSize+"");
 _18.pageSize=parseInt(ps.val());

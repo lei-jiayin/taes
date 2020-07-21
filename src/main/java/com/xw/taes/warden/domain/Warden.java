@@ -1,6 +1,6 @@
 package com.xw.taes.warden.domain;
 
-import com.xw.taes.commons.vto.Page;
+import com.xw.taes.commons.base.DataEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -16,7 +16,7 @@ import lombok.ToString;
 @Data
 @ToString
 @ApiModel
-public class Warden extends Page {
+public class Warden extends DataEntity<Warden> {
 	@ApiModelProperty(value = "用户id",dataType = "int")
 	private Integer wid;
 	@ApiModelProperty(value = "用户账号")
