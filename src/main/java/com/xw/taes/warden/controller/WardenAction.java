@@ -4,11 +4,10 @@ import com.xw.taes.commons.base.BaseAction;
 import com.xw.taes.warden.domain.Warden;
 import com.xw.taes.commons.vto.ReturnResult;
 import com.xw.taes.warden.service.WardenService;
-import com.xw.taes.commons.util.WardenTree;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+@Api(value = "管理员控制", description = "管理员接口") // swagger注解
 @Controller
 @RequestMapping("/admin/warden")
 @Slf4j
@@ -85,13 +83,13 @@ public class WardenAction extends BaseAction {
 	 * @param warden 传入ID
 	 * @return 返回待修改的值
 	 */
+	@ApiOperation(value = "获取要修改的信息", notes = "传入wid")
 	@PostMapping("/edit")
 	@ResponseBody
 	public ReturnResult edit(Warden warden){
 		System.err.println("edit="+warden.getWid());
 		Warden editData = wardenService.findById(warden.getWid());
 		return new ReturnResult("1",editData);
-		
 	}
 
 	/**
