@@ -8,6 +8,8 @@ import com.xw.taes.warden.service.WardenService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,13 +33,13 @@ public class WardenAction extends BaseAction {
 
 	private final static String SESSION_WARDEN = "warden";
 
-	@GetMapping("/login")
+	/*@GetMapping("/login")
 	public String login() {
 		System.out.println("login");
 		return "/wLogin";
-	}
+	}*/
 
-	@PostMapping("/login")
+	/*@PostMapping("/login")
 	public String wlogin(Warden warden, HttpServletRequest request, Model model){
 		log.debug(warden.toString());
 		Warden existLogin = wardenService.findByNoAndPwd(warden);
@@ -49,14 +51,7 @@ public class WardenAction extends BaseAction {
 		}else {
 			return "/warden/error";
 		}
-	}
-
-	@GetMapping("/exit")
-	public String exit(HttpServletRequest request){
-		//ActionContext.getContext().getSession().clear();
-		request.getSession().removeAttribute(SESSION_WARDEN);
-		return "/wLogin";
-	}
+	}*/
 
 	@GetMapping("/info")
 	public String info(HttpServletRequest request, Model model){
@@ -83,6 +78,7 @@ public class WardenAction extends BaseAction {
 	 * @param warden 传入ID
 	 * @return 返回待修改的值
 	 */
+	@RequiresPermissions("root:edit")
 	@ApiOperation(value = "获取要修改的信息", notes = "传入wid")
 	@PostMapping("/edit")
 	@ResponseBody
@@ -97,6 +93,8 @@ public class WardenAction extends BaseAction {
 	 * @param warden 值
 	 * @return 成功or失败
 	 */
+	@RequiresRoles("root")
+	@RequiresPermissions("root:edit")
 	@PostMapping("/save")
 	@ResponseBody
 	public ReturnResult update(Warden warden){
@@ -119,6 +117,7 @@ public class WardenAction extends BaseAction {
 	 * 跳转到管理员页面
 	 * @return 页面
 	 */
+	@RequiresRoles("root")
 	@GetMapping("/mwarden")
 	public String mWarden(){
 		return "/warden/mwarden";
@@ -129,6 +128,7 @@ public class WardenAction extends BaseAction {
 	 * @param warden
 	 * @return
 	 */
+	@RequiresRoles("root")
 	@PostMapping("mwarden")
 	@ResponseBody
 	public ReturnResult mWarden(PageVto pageVto, Warden warden){

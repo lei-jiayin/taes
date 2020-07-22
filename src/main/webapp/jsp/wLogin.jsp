@@ -36,19 +36,19 @@ body {
 </script>
 </head>
 <body>
-	<form class="form-horizontal" action="/admin/warden/login" method="post">
+	<form class="form-horizontal" action="/admin/login" method="post">
 		<div class="form-group">
-			<label for="wNo" class="col-sm-2 control-label">编号</label>
+			<label for="userName" class="col-sm-2 control-label">编号</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="wNo" name="wno"
+				<input type="text" class="form-control" id="userName" name="userName"
 					placeholder="no">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="wPassword" class="col-sm-2 control-label">密码</label>
+			<label for="password" class="col-sm-2 control-label">密码</label>
 			<div class="col-sm-6">
-				<input type="password" class="form-control" id="wPassword"
-					name="wpassword" placeholder="Password">
+				<input type="password" class="form-control" id="password"
+					name="password" placeholder="Password">
 			</div>
 		</div>
 		<div class="form-group">

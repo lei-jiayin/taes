@@ -19,6 +19,7 @@
         <mysql-connect-java.version>5.1.16</mysql-connect-java.version>
         <poi.version>4.1.1</poi.version>
         <swagger.version>2.9.2</swagger.version>
+        <shiro-spring.vaersion>1.5.3</shiro-spring.vaersion>
     </properties>
 
     <dependencies>
@@ -32,6 +33,13 @@
                     <artifactId>spring-boot-starter-logging</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- 引用shiro权限依赖 -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro-spring.vaersion}</version>
         </dependency>
 
         <!-- 引入log4j2依赖 -->

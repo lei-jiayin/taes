@@ -11,7 +11,7 @@ $(function() {
 		},
 			
 		search : function() {
-			alert($('input[name="keyword"]').val());
+			// alert($('input[name="keyword"]').val());
 			$('#table1').datagrid('load',{
 				wname : $.trim($('input[name="keyword"]').val()),
 			});
