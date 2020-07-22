@@ -44,20 +44,10 @@ public class LoginController {
         try{
             //登录验证
             subject.login(usernamePasswordToken);
-            model.addAttribute("userName", user.getUserName());
             return "redirect:/admin/index";
         }catch (AuthorizationException e){
             e.printStackTrace();
         }
-       /* Warden existLogin = wardenService.findByNoAndPwd(warden);
-        if (existLogin != null){
-            request.getSession().setAttribute(SESSION_WARDEN, existLogin);
-            model.addAttribute("warden", existLogin);
-            System.out.println("--------existLoginֵ=" + existLogin + "," + "当前类=WardenAction.wlogin()");
-
-        }else {
-            return "/error";
-        }*/
         return "redirect:/admin/error";
     }
 

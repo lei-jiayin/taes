@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50728
 File Encoding         : 65001
 
-Date: 2020-07-21 17:12:02
+Date: 2020-07-22 18:01:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -386,6 +386,92 @@ INSERT INTO `teacher_nav` VALUES ('8', '试题管理', 'showQuestionBank', 'open
 INSERT INTO `teacher_nav` VALUES ('9', '导出成绩单', 'reportCard', 'open', '3');
 
 -- ----------------------------
+-- Table structure for t_sys_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `t_sys_permission`;
+CREATE TABLE `t_sys_permission` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `permission_name` varchar(50) DEFAULT NULL COMMENT '权限名称',
+  `description` text COMMENT '权限描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_sys_permission
+-- ----------------------------
+INSERT INTO `t_sys_permission` VALUES ('1', 'root:edit', '管理员修改');
+
+-- ----------------------------
+-- Table structure for t_sys_role
+-- ----------------------------
+DROP TABLE IF EXISTS `t_sys_role`;
+CREATE TABLE `t_sys_role` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(50) DEFAULT NULL COMMENT '角色名称',
+  `description` text COMMENT '角色描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_sys_role
+-- ----------------------------
+INSERT INTO `t_sys_role` VALUES ('1', 'root', '系统管理员');
+INSERT INTO `t_sys_role` VALUES ('2', 'admin', '管理员');
+INSERT INTO `t_sys_role` VALUES ('3', 'teacher', '教师');
+INSERT INTO `t_sys_role` VALUES ('4', 'student', '学生');
+
+-- ----------------------------
+-- Table structure for t_sys_role_permission
+-- ----------------------------
+DROP TABLE IF EXISTS `t_sys_role_permission`;
+CREATE TABLE `t_sys_role_permission` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` int(11) DEFAULT NULL,
+  `permission_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_sys_role_permission
+-- ----------------------------
+INSERT INTO `t_sys_role_permission` VALUES ('1', '1', '1');
+
+-- ----------------------------
+-- Table structure for t_sys_user
+-- ----------------------------
+DROP TABLE IF EXISTS `t_sys_user`;
+CREATE TABLE `t_sys_user` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) DEFAULT NULL COMMENT '用户名',
+  `password` varchar(50) DEFAULT NULL COMMENT '密码',
+  `type` varchar(4) DEFAULT '0' COMMENT '类型 0 系统管理员 1 管理员 2 教师 3 学生',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_sys_user
+-- ----------------------------
+INSERT INTO `t_sys_user` VALUES ('1', '1001', '123', '0');
+INSERT INTO `t_sys_user` VALUES ('2', '1002', '234', '0');
+
+-- ----------------------------
+-- Table structure for t_sys_user_role
+-- ----------------------------
+DROP TABLE IF EXISTS `t_sys_user_role`;
+CREATE TABLE `t_sys_user_role` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_sys_user_role
+-- ----------------------------
+INSERT INTO `t_sys_user_role` VALUES ('1', '1', '1');
+INSERT INTO `t_sys_user_role` VALUES ('2', '2', '2');
+
+-- ----------------------------
 -- Table structure for warden
 -- ----------------------------
 DROP TABLE IF EXISTS `warden`;
@@ -396,14 +482,15 @@ CREATE TABLE `warden` (
   `TEL` varchar(50) DEFAULT NULL,
   `WPASSWORD` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`WID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of warden
 -- ----------------------------
-INSERT INTO `warden` VALUES ('1', '1001', 'xm', '18827636379', '123');
+INSERT INTO `warden` VALUES ('1', '1001', '小妹', '18827636379', '123');
 INSERT INTO `warden` VALUES ('2', '1002', '熊伟', '123456', '123');
 INSERT INTO `warden` VALUES ('3', '1003', '李四', '18827636377', '123');
+INSERT INTO `warden` VALUES ('4', '1004', '123', '123456', '123');
 
 -- ----------------------------
 -- Table structure for warden_nav
@@ -423,7 +510,7 @@ CREATE TABLE `warden_nav` (
 -- ----------------------------
 INSERT INTO `warden_nav` VALUES ('1', '用户管理', '', 'closed', '0');
 INSERT INTO `warden_nav` VALUES ('2', '数据管理', '', 'closed', '0');
-INSERT INTO `warden_nav` VALUES ('3', '管理员管理', 'mwarden', 'open', '1');
+INSERT INTO `warden_nav` VALUES ('3', '管理员管理', '/admin/warden/mwarden', 'open', '1');
 INSERT INTO `warden_nav` VALUES ('4', '学生管理', 'mstudent', 'open', '1');
 INSERT INTO `warden_nav` VALUES ('5', '教师管理', 'mteacher', 'open', '1');
 INSERT INTO `warden_nav` VALUES ('6', '课程管理', 'mcourses', 'open', '2');
