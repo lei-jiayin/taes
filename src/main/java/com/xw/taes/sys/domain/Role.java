@@ -1,5 +1,6 @@
 package com.xw.taes.sys.domain;
 
+import com.xw.taes.commons.base.DataEntity;
 import lombok.Data;
 
 import java.util.Set;
@@ -11,7 +12,7 @@ import java.util.Set;
  * @date 2020/7/22 14:57
  */
 @Data
-public class Role {
+public class Role extends DataEntity<Role> {
     private int id;
     private String roleName;
     private String description;

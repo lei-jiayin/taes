@@ -25,7 +25,7 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
      * @param id
      * @return
      */
-    public T get(String id) {
+    public T get(Integer id) {
         return dao.get(id);
     }
 
@@ -49,7 +49,7 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
 
     /**
      * 查询分页数据
-     * @param pageVto 分页对象
+     * @param
      * @param entity
      * @return
      */
@@ -58,6 +58,16 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
         pageVto.setList(dao.findList(entity));
         return pageVto;
     }*/
+
+   @Transactional(readOnly = false)
+   public int update(T entity){
+       return dao.update(entity);
+   }
+
+   @Transactional(readOnly = false)
+   public int insert(T entity){
+       return dao.insert(entity);
+   }
 
     /**
      * 保存数据（插入或更新）

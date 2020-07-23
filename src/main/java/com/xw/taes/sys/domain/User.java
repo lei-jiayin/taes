@@ -21,6 +21,9 @@ public class User extends DataEntity<User> {
     private String userName;
     private String password;
     private String type;
+
+    private Integer roleId;
+    private String roleName;
     /**
      * 存放用户角色信息
      */

@@ -28,7 +28,7 @@
                 WNAME like concat("%",#{wname},"%")
             </if>
         </where>
-        order by #{pageVto.sort},#{pageVto.order}
+        order by #{pageVto.sort} #{pageVto.order}
         limit #{pageVto.first},#{pageVto.rows}
     </select>
     <select id="findCount" parameterType="com.xw.taes.warden.domain.Warden" resultType="int">

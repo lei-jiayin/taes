@@ -2,27 +2,27 @@
  * 系统用户选项卡js
  */
 $(function() {
-	obj = {
+	user_obj = {
 		reload : function() {
-			$('#table1').datagrid('reload');
+            $('input[name="userName_keyword"]').val("");
+			$('#table_user').datagrid('reload',{userNam: ''});
 		},
 		redo : function() {
-			$('#table1').datagrid('unselectAll');
+			$('#table_user').datagrid('unselectAll');
 		},
-			
 		search : function() {
 			// alert($('input[name="keyword"]').val());
-			$('#table1').datagrid('load',{
-				userName : $.trim($('input[name="keyword"]').val()),
+			$('#table_user').datagrid('load',{
+				userName : $.trim($('input[name="userName_keyword"]').val()),
 			});
 		},
 		add : function() {
-			$('#warden_add').dialog('open');
-			$('input[name="wno"]').focus();
+			$('#user_add').dialog('open');
+			$('input[name="userName"]').focus();
 		},
 		edit : function(){
-			var rows = $('#table1').datagrid('getSelections');
-			console.log(rows);
+			var rows = $('#table_user').datagrid('getSelections');
+			// console.log(rows);
 			if (rows.length>1) {
 				$.messager.alert('警告','编辑时只能选择一条进行修改！','waring');
 			}else if (rows.length == 0) {
@@ -30,10 +30,10 @@ $(function() {
 			} else if(rows.length == 1){
 				//alert(rows[0].wid);
 				$.ajax({
-					url : '/admin/warden/edit',
+					url : '/admin/user/edit',
 					type : 'post',
 					data : {
-						wid : rows[0].wid,
+						id : rows[0].id,
 					},
 					beforeSend : function() {
 						$.messager.progress({
@@ -43,14 +43,11 @@ $(function() {
 					success : function(data,response,status) {
 						$.messager.progress('close');
 						if (data) {
-							console.log(data);
-							
-							$('#warden_edit').form('load',{
-                                wid_edit : data.data.wid,
-								wno_edit : data.data.wno,
-								wname_edit : data.data.wname,
-								tel_edit : data.data.tel,
-								
+							// console.log(data);
+							$('#user_edit').form('load',{
+                                id_edit : data.data.id,
+								userName_edit : data.data.userName,
+                                roleId : data.data.roleId
 							}).dialog('open');
 						}else {
 							$.messager.alert('请求失败！','未知错误！请重试','warning');
@@ -70,12 +67,12 @@ $(function() {
 					if (flag) {
 						var ids=[];
 						for (var i = 0; i < rows.length; i++) {
-							ids.push(rows[i].wid);
+							ids.push(rows[i].id);
 						}
 						//console.log(ids.join(','));
 						//以ajax方式提交给后台删除所选记录
 						$.ajax({
-							url : 'delete.action',
+							url : '/admin/user/delete',
 							type : 'POST',
 							data : {
 								ids : ids.join(','),
@@ -83,18 +80,18 @@ $(function() {
 							dataType : 'text',
 							//传递之前
 							beforeSend : function() {
-								$('#table1').datagrid('loading');
+								$('#table_user').datagrid('loading');
 							},
 							
 							success : function(data) {
 								if (data) {
 									alert(data);
-									$('#table1').datagrid('loaded');
-									$('#table1').datagrid('load');
-									$('#table1').datagrid('unselectAll');
+									$('#table_user').datagrid('loaded');
+									$('#table_user').datagrid('load');
+									$('#table_user').datagrid('unselectAll');
 									$.messager.show({
 										title : '提示',
-										msg : data + '个管理被删除！',
+										msg : data + '条数据被删除！',
 									});
 								}
 							}
@@ -111,14 +108,14 @@ $(function() {
 	
 	$('#table_user').datagrid({
 		title : '管理员列表',
-		url : '/admin/warden/mwarden',
+		url : '/admin/user/list',
 		fitColumns : true,
 		border : false,
 		rownumbers : true,
 		columns : [[
 			{
 				title : '编号',
-				field : 'wid',
+				field : 'id',
 				width : 100,
 				sortable : true,
 				checkbox : true,
@@ -126,23 +123,15 @@ $(function() {
 			},
 			{
 				title : '账号',
-				field : 'wno',
+				field : 'userName',
 				width : 100,
 				sortable : true,
 				align : 'center'
-			},
-			{
-				title : '姓名',
-				field : 'wname',
-				width : 100,
-				sortable : true,
-				align : 'center'
-			},
-			{
-				title : '电话',
-				field : 'tel',
-				width : 100,
-				align : 'center'
+			},{
+				title: '角色',
+				field: 'roleName',
+				width: 100,
+				align: "center"
 			}
 		]],
 		
@@ -151,8 +140,8 @@ $(function() {
 		pageSize : 5,
 		pageList : [5,10,15,20],
 		pagePosition : 'bottom',
-		sortName : 'wid',
-		sortOrder : 'ASC',
+		sortName : 'id',
+		sortOrder : 'DESC',
 		remoteSort : true,
 		toolbar : '#user_tb'
 		
@@ -168,15 +157,14 @@ $(function() {
 			text : '添加',
 			iconCls : 'icon-add',
 			handler : function() {
-				if ($('#warden_add').form('validate')) {
+				if ($('#user_add').form('validate')) {
 					$.ajax({
-						url : '/admin/warden/save',
+						url : '/admin/user/save',
 						type : 'post',
 						data : {
-							wno : $('input[name="wno"]').val(),
-							wname : $('input[name="wname"]').val(),
-							tel : $('input[name="tel"]').val(),
-							wpassword : $('input[name="wpassword"]').val(),
+							userName : $('input[name="userName"]').val(),
+							password : $('input[name="password"]').val(),
+							roleId : $('input[name="roleId"]').val()
 						},
 						beforeSend : function() {
 							$.messager.progress({
@@ -190,8 +178,8 @@ $(function() {
 									title : '提示',
 									msg : '添加管理员成功！',
 								});
-								$('#warden_add').dialog('close').form('reset');
-								$('#table1').datagrid('reload');
+								$('#user_add').dialog('close').form('reset');
+								$('#table_user').datagrid('reload');
 							}else {
 								$.messager.alert('新增失败！','未知错误！请重试','warning');
 							}
@@ -203,7 +191,7 @@ $(function() {
 			text : '取消',
 			iconCls : 'icon-redo',
 			handler : function() {
-				$('#warden_add').dialog('close').form('reset');
+				$('#user_add').dialog('close').form('reset');
 			},
 		}]
 	});
@@ -218,16 +206,15 @@ $(function() {
 			text : '修改',
 			iconCls : 'icon-edit',
 			handler : function() {
-				if ($('#warden_edit').form('validate')) {
+				if ($('#user_edit').form('validate')) {
 					$.ajax({
-						url : '/admin/warden/save',
+						url : '/admin/user/save',
 						type : 'post',
 						data : {
-							wid : $('input[name="wid_edit"]').val(),
-							wno : $('input[name="wno_edit"]').val(),
-							wname : $('input[name="wname_edit"]').val(),
-							tel : $('input[name="tel_edit"]').val(),
-							wpassword : $('input[name="wpassword_edit"]').val(),
+							id : $('input[name="id_edit"]').val(),
+							userName : $('input[name="userName_edit"]').val(),
+							password : $('input[name="password_edit"]').val(),
+							roleId : $('#roleId_edit').val()
 						},
 						beforeSend : function() {
 							$.messager.progress({
@@ -241,8 +228,8 @@ $(function() {
 									title : '提示',
 									msg : '修改管理员成功！',
 								});
-								$('#warden_edit').dialog('close').form('reset');
-								$('#table1').datagrid('reload');
+								$('#user_edit').dialog('close').form('reset');
+								$('#table_user').datagrid('reload');
 							}else {
 								$.messager.alert('修改失败！','未知错误！请重试','warning');
 							}
@@ -255,7 +242,7 @@ $(function() {
 			text : '取消',
 			iconCls : 'icon-redo',
 			handler : function() {
-				$('#warden_edit').dialog('close').form('reset');
+				$('#user_edit').dialog('close').form('reset');
 			},
 		}]
 	});
@@ -285,14 +272,53 @@ $(function() {
 	});
 	
 	//查询验证
-	$('input[name="keyword"]').validatebox({
+	$('input[name="userName_keyword"]').validatebox({
 		required : true,
-		missingMessage : '请输入姓名关键字',
+		missingMessage : '请输入用户账号',
 	});
-	
-	
-	
-	
-	
-	
+
+	$('input[name="roleId"]').validatebox({
+		required : true,
+		missingMessage : '请选择角色'
+	});
+
+	$("input[name='roleId']").combobox({
+		// url: '/admin/user/getRoles',
+		// method: 'get',
+		mode: 'remote',
+		valueField: 'id',
+		textField: 'roleName',
+        panelHeight:'auto',
+		loader: function (param,success,error) {
+            // var q = param.q || '';
+            // if (q.length <= 1){return false}
+			// console.log(param);
+            $.ajax({
+                url: '/admin/user/getRoles',
+				method: 'get',
+                dataType: 'json',
+                /*data: {
+                    featureClass: "P",
+                    style: "full",
+                    maxRows: 20,
+                    name_startsWith: q
+                },*/
+                success: function(data){
+                	// console.log(data);
+                    var items = $.map(data.data, function(item){
+                    	// console.log(item.id);
+                    	// console.log(item.roleName);
+                        return {
+                            id: item.id,
+                            roleName: item.roleName
+                        };
+                    });
+                    success(items);
+                },
+                error: function(){
+                    error.apply(this, arguments);
+                }
+            });
+        }
+	});
 });

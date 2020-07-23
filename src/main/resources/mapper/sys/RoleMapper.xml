@@ -13,4 +13,13 @@
         WHERE
             ur.user_id = #{id}
     </select>
+
+    <select id="findAllList" resultType="com.xw.taes.sys.domain.Role">
+        select
+            id,
+            role_name roleName
+        from
+            t_sys_role
+    </select>
+
 </mapper>

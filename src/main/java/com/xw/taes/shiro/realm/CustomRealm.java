@@ -37,7 +37,7 @@ public class CustomRealm extends AuthorizingRealm {
             simpleAuthorizationInfo.addRole(role.getRoleName());
             //添加权限
             for (Permission permission : role.getPermissions()) {
-                simpleAuthorizationInfo.addStringPermission(permission.getPermissionName());
+                simpleAuthorizationInfo.addStringPermission(permission.getPermissionCode());
             }
         }
         return simpleAuthorizationInfo;

@@ -13,7 +13,7 @@ public interface CrudDao<T> {
      * @param id
      * @return
      */
-     T get(String id);
+     T get(Integer id);
 
     /**
      * 获取单条数据

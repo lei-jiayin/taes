@@ -1,9 +1,9 @@
 # @date 2020/7/17 11:19
 #配置jsp文件位置
 spring:
-#  thymeleaf:
-#    cache: false
-#    enabled: false
+  thymeleaf:
+    cache: false
+    enabled: false
   mvc:
     view:
       prefix: /jsp

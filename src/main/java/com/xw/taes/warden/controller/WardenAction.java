@@ -33,26 +33,6 @@ public class WardenAction extends BaseAction {
 
 	private final static String SESSION_WARDEN = "warden";
 
-	/*@GetMapping("/login")
-	public String login() {
-		System.out.println("login");
-		return "/wLogin";
-	}*/
-
-	/*@PostMapping("/login")
-	public String wlogin(Warden warden, HttpServletRequest request, Model model){
-		log.debug(warden.toString());
-		Warden existLogin = wardenService.findByNoAndPwd(warden);
-		if (existLogin != null){
-			request.getSession().setAttribute(SESSION_WARDEN, existLogin);
-			model.addAttribute("warden", existLogin);
-			System.out.println("--------existLoginֵ=" + existLogin + "," + "当前类=WardenAction.wlogin()");
-			return "/warden/index";
-		}else {
-			return "/warden/error";
-		}
-	}*/
-
 	@GetMapping("/info")
 	public String info(HttpServletRequest request, Model model){
 		Warden warden = (Warden) request.getSession().getAttribute(SESSION_WARDEN);
