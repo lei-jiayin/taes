@@ -37,6 +37,7 @@
 				<div id="tabs">
 					<div title="起始页" data-options="closable:true" style="padding: 0 10px;display: block;">
 						欢迎来到Taes后台管理系统
+						<jsp:include page="error.jsp"/>
 					</div>
 				</div>
 			</div>

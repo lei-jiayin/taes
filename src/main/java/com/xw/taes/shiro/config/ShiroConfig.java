@@ -9,10 +9,13 @@ import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
+import javax.servlet.Filter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +43,12 @@ public class ShiroConfig {
         return customRealm;
     }
 
+/*    @Bean
+    public RoleAuthorizationFilter myRoleAuthorizationFilter(){
+        RoleAuthorizationFilter roleAuthorizationFilter = new RoleAuthorizationFilter();
+        return roleAuthorizationFilter;
+    }*/
+
     @Bean
     public CookieRememberMeManager cookieRememberMeManager() {
         CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
@@ -64,6 +73,10 @@ public class ShiroConfig {
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
+        Map<String, Filter> filters = new HashMap<>();
+        filters.put("authc",new RoleAuthorizationFilter());
+        shiroFilterFactoryBean.setFilters(filters);
+        //shiroFilterFactoryBean.set
         Map<String, String> map = new HashMap<>();
         //登出
         map.put("/admin/logout", "logout");
@@ -77,7 +90,7 @@ public class ShiroConfig {
         //首页
         //shiroFilterFactoryBean.setSuccessUrl("/admin/index");
         //错误页面，认证不通过跳转
-        //shiroFilterFactoryBean.setUnauthorizedUrl("/error");
+        shiroFilterFactoryBean.setUnauthorizedUrl("/admin/error");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
         return shiroFilterFactoryBean;
     }

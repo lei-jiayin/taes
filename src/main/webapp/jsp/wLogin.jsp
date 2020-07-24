@@ -36,7 +36,7 @@ body {
 </script>
 </head>
 <body>
-	<form class="form-horizontal" action="/admin/login" method="post">
+	<form class="form-horizontal" method="post" id="login">
 		<div class="form-group">
 			<label for="userName" class="col-sm-2 control-label">编号</label>
 			<div class="col-sm-6">
@@ -51,7 +51,7 @@ body {
 					name="password" placeholder="Password">
 			</div>
 		</div>
-		<div class="form-group">
+		<%--<div class="form-group">
 			<label for="vcode" class="col-sm-2 control-label">验证码</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control" id="vcode" name="vcode"
@@ -60,12 +60,28 @@ body {
 					src="${pageContext.request.contextPath}/vCode.action"
 					onclick="change()" title="点击更换验证码">
 			</div>
-		</div>
+		</div>--%>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 				<button type="submit" class="btn btn-default">登录</button>
 			</div>
 		</div>
 	</form>
+	<script type="text/javascript">
+		$("#login").form("submit",{
+		    url:'/admin/login',
+			onSubmit: function () {
+		        var userName = $("#userName").val();
+		        if (userName === ''){
+		            alert("用户名不为空！");
+				} 
+            },
+			error: function (data) {
+				if (data.code === '0'){
+				    alert(data.message);
+				}
+            }
+		})
+	</script>
 </body>
 </html>
