@@ -44,7 +44,7 @@ public class LoginController {
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(user.getUserName(),user.getPassword());
         try{
             //登录验证
-            subject.login(usernamePasswordToken);
+//            subject.login(usernamePasswordToken);
             return "redirect:/admin/index";
         }catch (AuthorizationException e){
             e.printStackTrace();
@@ -61,6 +61,7 @@ public class LoginController {
     @RequiresUser
     @RequestMapping("index")
     public String index(Model model){
+        log.debug("进入首页！");
         Subject subject = SecurityUtils.getSubject();
         String name = subject.getPrincipal().toString();
         User user = loginService.getUserByName(name);

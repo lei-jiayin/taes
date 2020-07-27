@@ -63,12 +63,45 @@ body {
 		</div>--%>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">登录</button>
+				<button type="button" onclick="login()" class="btn btn-default">登录</button>
+				<%--<button type="submit" class="btn btn-default">登录</button>--%>
 			</div>
 		</div>
 	</form>
 	<script type="text/javascript">
-		$("#login").form("submit",{
+		function login() {
+		    var userName = $("#userName").val();
+		    var password = $("#password").val();
+		    if (userName != '' && password != ''){
+                $.ajax({
+					url:'/admin/login',
+					dataType:'json',
+					type:'post',
+					data: $('#login').serialize(),
+					asyn:true,
+					success:function (data) {
+					    console.log(1);
+						if (data == '0')
+						{
+						    console.log("success");
+						    // location.href = '/admin/index';
+						}else {
+						    console.log(data.message);
+						    console.log("登录失败");
+						}
+                    },
+					error:function (data) {
+					    console.log(data);
+                        console.log("登录失败123");
+                        console.log(data.message);
+                    }
+                })
+			} else {
+		        alert("账号密码不能为空！");
+			}
+
+        }
+		/*$("#login").form("submit",{
 		    url:'/admin/login',
 			onSubmit: function () {
 		        var userName = $("#userName").val();
@@ -81,7 +114,7 @@ body {
 				    alert(data.message);
 				}
             }
-		})
+		})*/
 	</script>
 </body>
 </html>

@@ -74,7 +74,9 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String, Filter> filters = new HashMap<>();
-        filters.put("authc",new RoleAuthorizationFilter());
+        RoleAuthorizationFilter roleAuthorizationFilter = new RoleAuthorizationFilter();
+        roleAuthorizationFilter.setUsernameParam("userName");
+        filters.put("authc",roleAuthorizationFilter);
         shiroFilterFactoryBean.setFilters(filters);
         //shiroFilterFactoryBean.set
         Map<String, String> map = new HashMap<>();
@@ -88,7 +90,7 @@ public class ShiroConfig {
         //登录
         shiroFilterFactoryBean.setLoginUrl("/admin/login");
         //首页
-        //shiroFilterFactoryBean.setSuccessUrl("/admin/index");
+        shiroFilterFactoryBean.setSuccessUrl("/admin/index");
         //错误页面，认证不通过跳转
         shiroFilterFactoryBean.setUnauthorizedUrl("/admin/error");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);

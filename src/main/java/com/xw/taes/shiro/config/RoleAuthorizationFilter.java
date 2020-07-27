@@ -27,8 +27,8 @@ import java.util.Map;
 public class RoleAuthorizationFilter extends FormAuthenticationFilter {
     /**
      * 当访问拒绝时
-     * @param servletRequest
-     * @param servletResponse
+     * @param request
+     * @param response
      * @return
      * @throws Exception
      */
@@ -74,6 +74,12 @@ public class RoleAuthorizationFilter extends FormAuthenticationFilter {
                 .getHeader("X-Requested-With"))) {// 不是ajax请求
             issueSuccessRedirect(request, response);
         }
+
+        PrintWriter out = response.getWriter();
+        out.println("{\"code\":'0'}");
+        out.flush();
+        out.close();
+
         return false;
     }
 
@@ -89,13 +95,13 @@ public class RoleAuthorizationFilter extends FormAuthenticationFilter {
             PrintWriter out = response.getWriter();
             String message = e.getClass().getSimpleName();
             if ("IncorrectCredentialsException".equals(message)) {
-                out.println("{\"success\":false,\"message\":\"密码错误\"}");
+                out.println("{\"code\":'1',\"message\":\"密码错误\"}");
             } else if ("UnknownAccountException".equals(message)) {
-                out.println("{\"success\":false,\"message\":\"账号不存在\"}");
+                out.println("{\"code\":'1',\"message\":\"账号不存在\"}");
             } else if ("LockedAccountException".equals(message)) {
-                out.println("{\"success\":false,\"message\":\"账号被锁定\"}");
+                out.println("{\"code\":'1',\"message\":\"账号被锁定\"}");
             } else {
-                out.println("{\"success\":false,\"message\":\"未知错误\"}");
+                out.println("{\"code\":'1',\"message\":\"未知错误\"}");
             }
             out.flush();
             out.close();

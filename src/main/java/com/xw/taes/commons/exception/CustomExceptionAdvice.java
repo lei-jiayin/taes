@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Slf4j
 @RestController
-@ControllerAdvice(basePackages = {"com.xw.taes.sys.controller"})
+@ControllerAdvice(basePackages = {"com.xw.taes.sys.controller","com.xw.taes.shiro.config"})
 public class CustomExceptionAdvice {
     /**
      * 处理与用户相关的业务异常
@@ -29,9 +29,9 @@ public class CustomExceptionAdvice {
         return new ReturnResult(e.getCode().toString(),e.getMessage(),false);
     }
 
-    //@ExceptionHandler(IncorrectCredentialsException.class)
+//    @ExceptionHandler(IncorrectCredentialsException.class)
     public ReturnResult incorrectCredentialsExceptionHandler(HttpServletRequest request, IncorrectCredentialsException e){
         log.error("用户登录错误：Host:{},错误信息为:{}",request.getRemoteHost(),e.getMessage());
-        return new ReturnResult("0","登录失败用户名或密码错误");
+        return new ReturnResult("1","登录失败用户名或密码错误");
     }
 }
