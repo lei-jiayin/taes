@@ -1,5 +1,7 @@
 package com.xw.taes.shiro.config;
 
+import com.xw.taes.commons.exception.UserResponseEnum;
+import com.xw.taes.commons.vto.ReturnResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -35,6 +37,11 @@ public class RoleAuthorizationFilter extends FormAuthenticationFilter {
     @Override
     protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
         if(this.isLoginRequest(request, response)) {
+           String username = request.getParameter("userName");
+           String password = request.getParameter("password");
+           this.setUsernameParam(username);
+           this.setPasswordParam(password);
+            log.debug("账号：{}，密码：{}",username, password);
             if(this.isLoginSubmission(request, response)) {
                 if(log.isTraceEnabled()) {
                     log.trace("Login submission detected.  Attempting to execute login.");
@@ -74,6 +81,7 @@ public class RoleAuthorizationFilter extends FormAuthenticationFilter {
                 .getHeader("X-Requested-With"))) {// 不是ajax请求
             issueSuccessRedirect(request, response);
         }
+        new ReturnResult("0").outMessage(response,new ReturnResult("0"));
         return false;
     }
 
@@ -85,22 +93,26 @@ public class RoleAuthorizationFilter extends FormAuthenticationFilter {
             return true;
         }
         try {
-            response.setCharacterEncoding("UTF-8");
-            PrintWriter out = response.getWriter();
+            //response.setCharacterEncoding("UTF-8");
+            //PrintWriter out = response.getWriter();
             String message = e.getClass().getSimpleName();
+            ReturnResult returnResult;
             if ("IncorrectCredentialsException".equals(message)) {
-                out.println("{\"success\":false,\"message\":\"密码错误\"}");
+                returnResult = new ReturnResult(UserResponseEnum.USER_ACCOUNT_ERROR);
             } else if ("UnknownAccountException".equals(message)) {
-                out.println("{\"success\":false,\"message\":\"账号不存在\"}");
+                returnResult = new ReturnResult(UserResponseEnum.USER_ACCOUNT_NOT_FOUND);
+                //out.println("{\"success\":false,\"message\":\"账号不存在\"}");
             } else if ("LockedAccountException".equals(message)) {
-                out.println("{\"success\":false,\"message\":\"账号被锁定\"}");
+                returnResult = new ReturnResult(UserResponseEnum.USER_ACCOUNT_LOCKED);
+                //out.println("{\"success\":false,\"message\":\"账号被锁定\"}");
             } else {
-                out.println("{\"success\":false,\"message\":\"未知错误\"}");
+                returnResult = new ReturnResult(UserResponseEnum.ERROR);
+                //out.println("{\"success\":false,\"message\":\"未知错误\"}");
             }
-            out.flush();
-            out.close();
+            returnResult.outMessage(response,returnResult);
+            //out.flush();
+            //out.close();
         } catch (IOException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
         return false;

@@ -7,14 +7,14 @@ package com.xw.taes.commons.exception;
  * @date 2020/7/24 9:52
  */
 public class SystemException extends RuntimeException {
-    private Integer code;
+    private String code;
 
     public SystemException(UserResponseEnum userResponseEnum) {
         super(userResponseEnum.getDescription());
         this.code = userResponseEnum.getCode();
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 }

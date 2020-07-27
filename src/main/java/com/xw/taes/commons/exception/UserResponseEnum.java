@@ -10,16 +10,24 @@ import lombok.Data;
  */
 public enum UserResponseEnum {
 
-    USER_NOT_AU(3002,"用户权限不足");
+    USER_ACCOUNT_ERROR("3001","账号密码错误！"),
+    USER_NOT_AU("3002","用户权限不足"),
+    /**
+     * 账号不存在
+     */
+    USER_ACCOUNT_NOT_FOUND("3003","账号不存在"),
+    USER_ACCOUNT_LOCKED("3004","账号被锁定"),
+    ERROR("500","系统错误")
+    ;
 
-    private int code;
+    private String code;
     private String description;
 
-    public int getCode() {
+    public String getCode() {
         return code;
     }
 
-    public void setCode(int code) {
+    public void setCode(String code) {
         this.code = code;
     }
 
@@ -31,7 +39,7 @@ public enum UserResponseEnum {
         this.description = description;
     }
 
-    UserResponseEnum(int code, String description) {
+    UserResponseEnum(String code, String description) {
         this.code = code;
         this.description = description;
     }}

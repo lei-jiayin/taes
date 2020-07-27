@@ -51,6 +51,11 @@ body {
 					name="password" placeholder="Password">
 			</div>
 		</div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <div id="login-msg" style="text-align: center"></div>
+            </div>
+        </div>
 		<%--<div class="form-group">
 			<label for="vcode" class="col-sm-2 control-label">验证码</label>
 			<div class="col-sm-6">
@@ -63,25 +68,72 @@ body {
 		</div>--%>
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
-				<button type="submit" class="btn btn-default">登录</button>
+				<button type="button" id="login_button" class="btn btn-default">登录</button>
 			</div>
 		</div>
 	</form>
 	<script type="text/javascript">
-		$("#login").form("submit",{
-		    url:'/admin/login',
-			onSubmit: function () {
-		        var userName = $("#userName").val();
-		        if (userName === ''){
-		            alert("用户名不为空！");
-				} 
-            },
-			error: function (data) {
-				if (data.code === '0'){
-				    alert(data.message);
-				}
+
+        $("#login_button").click(function () {
+            login();
+        });
+
+        function login() {
+            var userName = $("#userName").val();
+            var password = $("#password").val();
+            if (userName == '' || password == ''){
+                alert("用户名和密码不为空！");
+                return false;
             }
-		})
+            $.ajax({
+                url:'/admin/login',
+                type:'post',
+                data:$("#login").serialize(),
+                dataType:'json',
+                success:function(data){
+                    if(data.code == '0'){
+                        window.location="/index";
+                    }else{
+                        disappear(data.message);
+                    }
+                },
+                error: function (data) {
+                    if (data.code === '0'){
+                        disappear(data.message);
+                    }
+                }
+            });
+            /*$("#login").ajaxSubmit({
+                url:'/admin/login',
+                onSubmit: function () {
+                    var userName = $("#userName").val();
+                    var password = $("#password".val());
+                    if (userName == '' || password == ''){
+                        alert("用户名和密码不为空！");
+                    }
+                },
+                success:function(data){
+                    if(data.code == '0'){
+                        window.location="/index";
+                    }else{
+                        disappear(data.errorMessage);
+                    }
+                },
+                error: function (data) {
+                    if (data.code === '0'){
+                        disappear(data.message);
+                    }
+                }
+            });*/
+        }
+
+
+        //信息提示框消失
+        function disappear(msg){
+            $('#login-msg').html("<img src='' /><span style='color:red'>"+msg+"</span>");
+            setTimeout("$('#login-msg').fadeOut(1000,function(){$('#login-msg').html('').show();})",1500);
+            $("input[name=password]").val("");
+        }
 	</script>
 </body>
 </html>
