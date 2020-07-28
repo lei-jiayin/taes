@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>--%>
-	出现错误<p>${errorMess}</p>
+	<p>${errorMess}</p>
 <%--
 </body>
 </html>--%>

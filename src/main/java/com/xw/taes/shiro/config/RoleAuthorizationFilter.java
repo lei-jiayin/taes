@@ -29,8 +29,8 @@ import java.util.Map;
 public class RoleAuthorizationFilter extends FormAuthenticationFilter {
     /**
      * 当访问拒绝时
-     * @param servletRequest
-     * @param servletResponse
+     * @param request
+     * @param response
      * @return
      * @throws Exception
      */
@@ -39,8 +39,8 @@ public class RoleAuthorizationFilter extends FormAuthenticationFilter {
         if(this.isLoginRequest(request, response)) {
            String username = request.getParameter("userName");
            String password = request.getParameter("password");
-           this.setUsernameParam(username);
-           this.setPasswordParam(password);
+           //this.setUsernameParam(username);
+           //this.setPasswordParam(password);
             log.debug("账号：{}，密码：{}",username, password);
             if(this.isLoginSubmission(request, response)) {
                 if(log.isTraceEnabled()) {
@@ -81,7 +81,7 @@ public class RoleAuthorizationFilter extends FormAuthenticationFilter {
                 .getHeader("X-Requested-With"))) {// 不是ajax请求
             issueSuccessRedirect(request, response);
         }
-        new ReturnResult("0").outMessage(response,new ReturnResult("0"));
+        new ReturnResult().outMessage(response,new ReturnResult("0"));
         return false;
     }
 

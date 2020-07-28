@@ -92,7 +92,7 @@ body {
                 dataType:'json',
                 success:function(data){
                     if(data.code == '0'){
-                        window.location="/index";
+                        window.location="/admin/index";
                     }else{
                         disappear(data.message);
                     }

@@ -74,7 +74,9 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String, Filter> filters = new HashMap<>();
-        filters.put("authc",new RoleAuthorizationFilter());
+        RoleAuthorizationFilter roleAuthorizationFilter = new RoleAuthorizationFilter();
+        roleAuthorizationFilter.setUsernameParam("userName");
+        filters.put("authc",roleAuthorizationFilter);
         shiroFilterFactoryBean.setFilters(filters);
         //shiroFilterFactoryBean.set
         Map<String, String> map = new HashMap<>();
