@@ -2,10 +2,23 @@
 <!--@date 2020/7/16 9:58-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xw.taes.sys.dao.PermissionDao">
-    <select id="selectPermissionByRole" parameterType="com.xw.taes.sys.domain.Role" resultType="com.xw.taes.sys.domain.Permission">
+
+    <sql id="sort_sql">
+        order
+        by
+        #{pageVto.sort}
+        #{pageVto.order}
+        limit
+        #{pageVto.first},
+        #{pageVto.rows}
+    </sql>
+
+    <select id="selectPermissionByRole" parameterType="com.xw.taes.sys.domain.Role"
+            resultType="com.xw.taes.sys.domain.Permission">
         SELECT
             p.id,
             p.permission_name permissionName,
+            p.permission_code permissionCode,
             p.description
         FROM
             t_sys_permission p
@@ -13,4 +26,29 @@
         WHERE
             rp.role_id = #{id}
     </select>
+
+    <select id="findList" resultType="com.xw.taes.sys.domain.Permission">
+        select
+        p.id,
+        p.permission_name permissionName,
+        p.permission_code permissionCode,
+        p.description
+        from
+        t_sys_permission p
+        <where>
+            <if test="permissionName != null and permissionName != ''">
+                p.permission_name like concat('%',#{permissionName},'%')
+            </if>
+        </where>
+        <include refid="sort_sql"></include>
+    </select>
+
+    <select id="findAllList" resultType="com.xw.taes.sys.domain.Permission">
+        select
+            id,
+            permission_name permissionName
+        from
+            t_sys_permission
+    </select>
+
 </mapper>

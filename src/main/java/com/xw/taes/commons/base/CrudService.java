@@ -92,4 +92,10 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
     public void delete(T entity) {
         dao.delete(entity);
     }
+
+    @Transactional(readOnly = false)
+    public int deleteByIds(String ids){
+        String[] idss = ids.split(",");
+        return dao.deleteByIds(idss);
+    }
 }

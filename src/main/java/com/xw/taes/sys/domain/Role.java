@@ -17,6 +17,11 @@ public class Role extends DataEntity<Role> {
     private String roleName;
     private String description;
 
+    private String permissionId;
+    private String[] perId;
+    private String permissionName;
+    private String[] perName;
+
     //private String roleFlage;
     /**
      * 角色所拥有的权限列表

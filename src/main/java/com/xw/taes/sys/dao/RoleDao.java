@@ -22,4 +22,17 @@ public interface RoleDao extends CrudDao<Role> {
      * @return
      */
     Set<Role> selectRolesByUser(User user);
+
+    /**
+     * 删除该角色的所有权限
+     * @param roleId 角色ID
+     */
+    void deletePermissionByRoleId(int roleId);
+
+    /**
+     * 插入权限
+     * @param roleId 角色ID
+     * @param permissionId 权限id
+     */
+    void insertRolePermission(int roleId, Integer permissionId);
 }

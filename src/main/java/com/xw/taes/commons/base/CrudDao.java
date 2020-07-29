@@ -71,4 +71,6 @@ public interface CrudDao<T> {
      * @return
      */
     public int delete(T entity);
+
+    int deleteByIds(String[] ids);
 }

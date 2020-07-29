@@ -2,6 +2,15 @@
 <!--@date 2020/7/16 9:58-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xw.taes.sys.dao.RoleDao">
+    <sql id="sort_sql">
+        order
+        by
+        #{pageVto.sort}
+        #{pageVto.order}
+        limit
+        #{pageVto.first},
+        #{pageVto.rows}
+    </sql>
     <select id="selectRolesByUser" parameterType="com.xw.taes.sys.domain.User" resultType="com.xw.taes.sys.domain.Role">
         SELECT
             r.id,
@@ -22,4 +31,68 @@
             t_sys_role
     </select>
 
+    <select id="findList" resultType="com.xw.taes.sys.domain.Role" parameterType="com.xw.taes.sys.domain.Role">
+        SELECT
+        r.id,
+        r.role_name roleName,
+        r.description,
+        GROUP_CONCAT(p.id) permissionId,
+        GROUP_CONCAT(p.permission_name) permissionName
+        FROM
+        t_sys_role r
+        LEFT JOIN t_sys_role_permission rp ON r.id = rp.role_id
+        LEFT JOIN t_sys_permission p ON rp.permission_id = p.id
+        <where>
+            <if test="roleName != null and roleName != ''">
+                role_name like concat('%',#{roleName},'%')
+            </if>
+        </where>
+        GROUP BY
+        r.id
+        <include refid="sort_sql"></include>
+    </select>
+
+    <select id="get" parameterType="com.xw.taes.sys.domain.Role" resultType="com.xw.taes.sys.domain.Role">
+        SELECT
+            r.id,
+            r.role_name                     roleName,
+            r.description,
+            GROUP_CONCAT(p.id)              permissionId,
+            GROUP_CONCAT(p.permission_name) permissionName
+        FROM
+            t_sys_role r
+                LEFT JOIN t_sys_role_permission rp ON r.id = rp.role_id
+                LEFT JOIN t_sys_permission p ON rp.permission_id = p.id
+        WHERE
+            r.id = #{id}
+        GROUP BY
+            r.id
+    </select>
+
+    <insert id="insert" parameterType="com.xw.taes.sys.domain.Role" useGeneratedKeys="true" keyProperty="id">
+        insert into t_sys_role(role_name, description)
+        values (#{roleName}, #{description})
+    </insert>
+    <update id="update" parameterType="com.xw.taes.sys.domain.Role">
+        update t_sys_role
+        set
+            role_name   = #{roleName},
+            description = #{description}
+        where id = #{id}
+    </update>
+    <delete id="deletePermissionByRoleId" parameterType="int">
+        delete
+        from t_sys_role_permission
+        where role_id = #{roleId}
+    </delete>
+    <insert id="insertRolePermission">
+        insert into t_sys_role_permission(role_id, permission_id)
+        values (#{roleId}, #{permissionId})
+    </insert>
+    <delete id="deleteByIds">
+        delete from t_sys_role where id in
+        <foreach collection="array" open="(" close=")" separator="," item="i">
+            #{i}
+        </foreach>
+    </delete>
 </mapper>

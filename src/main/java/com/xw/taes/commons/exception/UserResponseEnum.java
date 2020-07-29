@@ -17,7 +17,10 @@ public enum UserResponseEnum {
      */
     USER_ACCOUNT_NOT_FOUND("3003","账号不存在"),
     USER_ACCOUNT_LOCKED("3004","账号被锁定"),
-    ERROR("500","系统错误")
+    ERROR("500","系统错误"),
+
+    SUCCESS("1","操作成功"),
+    FAIL("0","操作失败")
     ;
 
     private String code;
