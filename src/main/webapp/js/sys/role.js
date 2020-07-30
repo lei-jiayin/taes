@@ -321,6 +321,7 @@ $(function() {
     });
     $(".tabs-inner").click(function(){
         $("#permissionId_edit").combobox({
+            multiple: true,
             mode: 'remote',
             valueField: 'id',
             textField: 'permissionName',
@@ -346,6 +347,7 @@ $(function() {
             }
         });
         $("#permissionId").combobox({
+            multiple: true,
             mode: 'remote',
             valueField: 'id',
             textField: 'permissionName',
