@@ -26,7 +26,7 @@ public class PageVto {
      * 每页显示数
      */
     private int rows;
-    private int first = rows * (page - 1);
+    private int first;
     /**
      * 默认排序字段
      */
@@ -37,4 +37,7 @@ public class PageVto {
     private String order;
 
     //private List<T> rows;
+    private int getFirst(){
+        return this.rows * (this.page - 1);
+    }
 }

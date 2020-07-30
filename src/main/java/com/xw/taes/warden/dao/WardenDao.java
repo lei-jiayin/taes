@@ -3,7 +3,7 @@ package com.xw.taes.warden.dao;
 
 import com.xw.taes.commons.base.CrudDao;
 import com.xw.taes.warden.domain.Warden;
-import com.xw.taes.commons.util.WardenTree;
+import com.xw.taes.sys.domain.WardenTree;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

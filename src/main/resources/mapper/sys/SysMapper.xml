@@ -2,19 +2,112 @@
 <!--@date 2020/7/16 9:58-->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xw.taes.sys.dao.SysDao">
-    <select id="getNav" resultType="com.xw.taes.commons.util.WardenTree">
-        select
-        id,
-        text,
-        url,
-        state,
-        tid
-        from
-        warden_nav
+    <sql id="sort_sql">
+        order
+        by
+        #{pageVto.sort}
+        #{pageVto.order}
+        limit
+        #{pageVto.first},
+        #{pageVto.rows}
+    </sql>
+    <select id="getNav" resultType="com.xw.taes.sys.domain.WardenTree">
+        SELECT
+        n.*
+        FROM
+        t_sys_menu_role mr
+        LEFT JOIN warden_nav n ON mr.menu_id = n.id
+        LEFT JOIN t_sys_role r ON mr.role_id = r.id
         <where>
             <if test="id != null and id != ''">
                 tid = #{id}
             </if>
+            and mr.role_id in
+            <foreach collection="roleIdss" item="item" separator="," open="(" close=")">
+                #{item}
+            </foreach>
         </where>
     </select>
+    <select id="findCount" parameterType="com.xw.taes.sys.domain.WardenTree" resultType="int">
+        SELECT
+        count(1)
+        FROM
+        warden_nav n
+        LEFT JOIN t_sys_menu_role mr ON mr.menu_id = n.id
+        LEFT JOIN t_sys_role r ON mr.role_id = r.id
+        <where>
+            <if test="text != null and text != ''">
+                n.text like concat('%',#{text},'%')
+            </if>
+        </where>
+    </select>
+    <select id="findList" parameterType="com.xw.taes.sys.domain.WardenTree"
+            resultType="com.xw.taes.sys.domain.WardenTree">
+        SELECT
+        n.id,
+        n.text,
+        n.url,
+        n.state,
+        n.tid,
+        (select text from warden_nav where id = n.tid) tidText,
+        GROUP_CONCAT(r.id) roleId,
+        GROUP_CONCAT(r.role_name) roleName
+        FROM
+        warden_nav n
+        LEFT JOIN t_sys_menu_role mr ON mr.menu_id = n.id
+        LEFT JOIN t_sys_role r ON mr.role_id = r.id
+        <where>
+            <if test="text != null and text != ''">
+                n.text like concat('%',#{text},'%')
+            </if>
+        </where>
+        group by n.id
+        <include refid="sort_sql"></include>
+    </select>
+
+    <select id="get" resultType="com.xw.taes.sys.domain.WardenTree" parameterType="int">
+        SELECT
+            n.id,
+            n.text,
+            n.url,
+            n.state,
+            n.tid,
+            (select text from warden_nav where id = n.tid) tidName,
+            GROUP_CONCAT(r.id) roleId,
+            GROUP_CONCAT(r.role_name) roleName
+        FROM
+            warden_nav n
+                LEFT JOIN t_sys_menu_role mr ON mr.menu_id = n.id
+                LEFT JOIN t_sys_role r ON mr.role_id = r.id
+        where
+            n.id = #{id}
+        group by n.id
+    </select>
+
+    <update id="update" parameterType="com.xw.taes.sys.domain.WardenTree">
+        update warden_nav
+        set
+            text = #{text},
+            url=#{url},
+            state=#{state},
+            tid=#{tid}
+        where
+            id = #{id}
+    </update>
+    <insert id="insert" parameterType="com.xw.taes.sys.domain.WardenTree" useGeneratedKeys="true" keyProperty="id">
+        insert into warden_nav(text, url, state, tid)
+        values (#{text}, #{url}, #{state}, #{tid})
+    </insert>
+
+    <select id="getTid" resultType="com.xw.taes.sys.domain.WardenTree">
+        select id tid,text,url,state from warden_nav where tid = 0
+    </select>
+
+    <delete id="deleteRoleByMenuId" parameterType="int">
+        delete from t_sys_menu_role where menu_id = #{menuId}
+    </delete>
+
+    <insert id="insertMenuRole">
+        insert into t_sys_menu_role (menu_id, role_id) values (#{menuId},#{roleId})
+    </insert>
 </mapper>
