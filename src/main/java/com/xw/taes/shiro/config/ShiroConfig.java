@@ -9,11 +9,9 @@ import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.Filter;
 import java.util.HashMap;
@@ -44,8 +42,8 @@ public class ShiroConfig {
     }
 
 /*    @Bean
-    public RoleAuthorizationFilter myRoleAuthorizationFilter(){
-        RoleAuthorizationFilter roleAuthorizationFilter = new RoleAuthorizationFilter();
+    public LoginAuthorizationFilter myRoleAuthorizationFilter(){
+        LoginAuthorizationFilter roleAuthorizationFilter = new LoginAuthorizationFilter();
         return roleAuthorizationFilter;
     }*/
 
@@ -74,9 +72,9 @@ public class ShiroConfig {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String, Filter> filters = new HashMap<>();
-        RoleAuthorizationFilter roleAuthorizationFilter = new RoleAuthorizationFilter();
-        roleAuthorizationFilter.setUsernameParam("userName");
-        filters.put("authc",roleAuthorizationFilter);
+        LoginAuthorizationFilter loginAuthorizationFilter = new LoginAuthorizationFilter();
+        loginAuthorizationFilter.setUsernameParam("userName");
+        filters.put("authc", loginAuthorizationFilter);
         shiroFilterFactoryBean.setFilters(filters);
         //shiroFilterFactoryBean.set
         Map<String, String> map = new HashMap<>();

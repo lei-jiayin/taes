@@ -26,7 +26,7 @@ import java.util.Map;
  * @date 2020/7/24 10:57
  */
 @Slf4j
-public class RoleAuthorizationFilter extends FormAuthenticationFilter {
+public class LoginAuthorizationFilter extends FormAuthenticationFilter {
     /**
      * 当访问拒绝时
      * @param request
