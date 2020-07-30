@@ -58,4 +58,13 @@ public class RoleService extends CrudService<RoleDao, Role> {
         }
         return r1;
     }
+
+    @Override
+    public int deleteByIds(String ids) {
+        String[] idss = ids.split(",");
+        for (String id : idss){
+            dao.deletePermissionByRoleId(Integer.parseInt(id));
+        }
+        return super.deleteByIds(ids);
+    }
 }

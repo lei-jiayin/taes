@@ -71,14 +71,18 @@ public class RoleController {
         //String[] preIds = request.getParameterValues("preId");
         //String permissionId = String.join(",", preIds);
         //role.setPermissionId(permissionId);
-        if (role.getId() > 0){
-            // 更新
-            u = roleService.update(role);
-        }else {
-            u = roleService.insert(role);
-        }
-        if (u > 0){
-            return new ReturnResult(UserResponseEnum.SUCCESS);
+        try{
+            if (role.getId() > 0){
+                // 更新
+                u = roleService.update(role);
+            }else {
+                u = roleService.insert(role);
+            }
+            if (u > 0){
+                return new ReturnResult(UserResponseEnum.SUCCESS);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
         return new ReturnResult(UserResponseEnum.ERROR);
     }

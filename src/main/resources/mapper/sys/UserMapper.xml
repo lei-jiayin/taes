@@ -58,4 +58,7 @@
     <insert id="insertRole">
         insert into t_sys_user_role(user_id,role_id) values (#{userId},#{roleId})
     </insert>
+    <delete id="deleteRoleByUserId" parameterType="int">
+        delete from t_sys_user_role where user_id = #{userId}
+    </delete>
 </mapper>

@@ -41,7 +41,6 @@
 </div>
 
 <form id="role_add" style="margin: 0;padding: 5px 0 0 25px;color: #333;">
-    <input class="textbox" name="id" id="id" type="hidden">
     <p>角色名称：<input class="textbox" name="roleName" id="roleName" type="text" style="width: 200px;"></p>
     <p>描述：<input class="textbox" name="description" id="description" type="text" style="width: 200px;"></p>
     <p>权限：<input class="easyui-combobox" name="permissionId" id="permissionId" style="width:250px"/></p>
@@ -49,7 +48,7 @@
 
 
 <form id="role_edit" style="margin: 0;padding: 5px 0 0 25px;color: #333;">
-    <input class="textbox" name="id_edit" id="id_edit" type="hidden">
+    <input class="textbox" name="role_id_edit" id="role_id_edit" type="hidden">
     <p>角色名称：<input class="textbox" name="roleName_edit" id="wno" type="text" style="width: 200px;"></p>
     <p>描述：<input class="textbox" name="description_edit" id="wpassword" type="text" style="width: 200px;"></p>
     <p>权限：<input class="easyui-combobox" name="permissionId" id="permissionId_edit" style="width:250px"/></p>

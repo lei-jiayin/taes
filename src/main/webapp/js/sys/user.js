@@ -45,7 +45,7 @@ $(function() {
 						if (data) {
 							// console.log(data);
 							$('#user_edit').form('load',{
-                                id_edit : data.data.id,
+                                user_id_edit : data.data.id,
 								userName_edit : data.data.userName,
                                 roleId : data.data.roleId
 							}).dialog('open');
@@ -211,7 +211,7 @@ $(function() {
 						url : '/admin/user/save',
 						type : 'post',
 						data : {
-							id : $('input[name="id_edit"]').val(),
+							id : $('#user_id_edit').val(),
 							userName : $('input[name="userName_edit"]').val(),
 							password : $('input[name="password_edit"]').val(),
 							roleId : $('#roleId_edit').val()
@@ -281,44 +281,124 @@ $(function() {
 		required : true,
 		missingMessage : '请选择角色'
 	});
-
 	$("input[name='roleId']").combobox({
-		// url: '/admin/user/getRoles',
-		// method: 'get',
-		mode: 'remote',
-		valueField: 'id',
-		textField: 'roleName',
-        panelHeight:'auto',
-		loader: function (param,success,error) {
-            // var q = param.q || '';
-            // if (q.length <= 1){return false}
-			// console.log(param);
-            $.ajax({
-                url: '/admin/user/getRoles',
-				method: 'get',
-                dataType: 'json',
-                /*data: {
-                    featureClass: "P",
-                    style: "full",
-                    maxRows: 20,
-                    name_startsWith: q
-                },*/
-                success: function(data){
-                	// console.log(data);
-                    var items = $.map(data.data, function(item){
-                    	// console.log(item.id);
-                    	// console.log(item.roleName);
-                        return {
-                            id: item.id,
-                            roleName: item.roleName
-                        };
-                    });
-                    success(items);
-                },
-                error: function(){
-                    error.apply(this, arguments);
-                }
-            });
-        }
-	});
+            // url: '/admin/user/getRoles',
+            // method: 'get',
+            mode: 'remote',
+            valueField: 'id',
+            textField: 'roleName',
+            panelHeight:'auto',
+            loader: function (param,success,error) {
+                // var q = param.q || '';
+                // if (q.length <= 1){return false}
+                // console.log(param);
+                $.ajax({
+                    url: '/admin/user/getRoles',
+                    method: 'get',
+                    dataType: 'json',
+                    /*data: {
+                        featureClass: "P",
+                        style: "full",
+                        maxRows: 20,
+                        name_startsWith: q
+                    },*/
+                    success: function(data){
+                        // console.log(data);
+                        var items = $.map(data.data, function(item){
+                            // console.log(item.id);
+                            // console.log(item.roleName);
+                            return {
+                                id: item.id,
+                                roleName: item.roleName
+                            };
+                        });
+                        success(items);
+                    },
+                    error: function(){
+                        error.apply(this, arguments);
+                    }
+                });
+            }
+        });
+    $(".tabs-inner").click(function(){
+        $("#roleId_edit").combobox({
+            // url: '/admin/user/getRoles',
+            // method: 'get',
+            mode: 'remote',
+            valueField: 'id',
+            textField: 'roleName',
+            panelHeight:'auto',
+            loader: function (param,success,error) {
+                // var q = param.q || '';
+                // if (q.length <= 1){return false}
+                // console.log(param);
+                $.ajax({
+                    url: '/admin/user/getRoles',
+                    method: 'get',
+                    dataType: 'json',
+                    /*data: {
+                        featureClass: "P",
+                        style: "full",
+                        maxRows: 20,
+                        name_startsWith: q
+                    },*/
+                    success: function(data){
+                        // console.log(data);
+                        var items = $.map(data.data, function(item){
+                            // console.log(item.id);
+                            // console.log(item.roleName);
+                            return {
+                                id: item.id,
+                                roleName: item.roleName
+                            };
+                        });
+                        success(items);
+                    },
+                    error: function(){
+                        error.apply(this, arguments);
+                    }
+                });
+            }
+        });
+        $("#roleId").combobox({
+            // url: '/admin/user/getRoles',
+            // method: 'get',
+            mode: 'remote',
+            valueField: 'id',
+            textField: 'roleName',
+            panelHeight:'auto',
+            loader: function (param,success,error) {
+                // var q = param.q || '';
+                // if (q.length <= 1){return false}
+                // console.log(param);
+                $.ajax({
+                    url: '/admin/user/getRoles',
+                    method: 'get',
+                    dataType: 'json',
+                    /*data: {
+                        featureClass: "P",
+                        style: "full",
+                        maxRows: 20,
+                        name_startsWith: q
+                    },*/
+                    success: function(data){
+                        // console.log(data);
+                        var items = $.map(data.data, function(item){
+                            // console.log(item.id);
+                            // console.log(item.roleName);
+                            return {
+                                id: item.id,
+                                roleName: item.roleName
+                            };
+                        });
+                        success(items);
+                    },
+                    error: function(){
+                        error.apply(this, arguments);
+                    }
+                });
+            }
+        });
+        $('#table_user').datagrid('reload');
+    })
 });

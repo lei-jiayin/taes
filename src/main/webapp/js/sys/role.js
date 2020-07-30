@@ -46,13 +46,13 @@ $(function() {
                         $.messager.progress('close');
                         if (data.code == 1) {
                             // console.log(data);
+                            // $("input[name='permissionId']").combobox("loadData", data.data.perId);
                             $('#role_edit').form('load',{
-                                id_edit : data.data.id,
+                                role_id_edit : data.data.id,
                                 roleName_edit : data.data.roleName,
-                                description_edit : data.data.description
-                                // permissionId : data.data.perId
+                                description_edit : data.data.description,
+                                permissionId : data.data.perId
                             }).dialog('open');
-                            $("input[name='permissionId']").combobox("loadData", data.data.perId);
                         }else {
                             $.messager.alert('请求失败！','未知错误！请重试','warning');
                         }
@@ -81,22 +81,26 @@ $(function() {
                             data : {
                                 ids : ids.join(','),
                             },
-                            dataType : 'text',
+                            dataType : 'json',
                             //传递之前
                             beforeSend : function() {
                                 $('#table_role').datagrid('loading');
                             },
 
                             success : function(data) {
-                                $.messager.progress('close');
-                                if (data.code == 1) {
-                                    alert(data);
-                                    $('#table_role').datagrid('loaded');
-                                    $('#table_role').datagrid('load');
+                                $('#table_role').datagrid('loaded');
+                                if (data.code == '1') {
+                                    console.log("2");
+                                    $('#table_role').datagrid('reload');
                                     $('#table_role').datagrid('unselectAll');
                                     $.messager.show({
                                         title : '提示',
-                                        msg : data + '条数据被删除！',
+                                        msg : '删除成功！'
+                                    });
+                                }else {
+                                    $.messager.show({
+                                        title : '提示',
+                                        msg : data.message
                                     });
                                 }
                             }
@@ -175,7 +179,7 @@ $(function() {
                         data : {
                             roleName : $('input[name="roleName"]').val(),
                             description : $('input[name="description"]').val(),
-                            perId : $('input[name="permissionId"]').val()
+                            permissionId : $('#permissionId').combobox('getValues').toString()
                         },
                         beforeSend : function() {
                             $.messager.progress({
@@ -222,10 +226,10 @@ $(function() {
                         url : '/admin/role/save',
                         type : 'post',
                         data : {
-                            id : $('input[name="id_edit"]').val(),
+                            id : $('#role_id_edit').val(),
                             roleName : $('input[name="roleName_edit"]').val(),
                             description : $('input[name="description_edit"]').val(),
-                            perId : $('#permissionId_edit').val()
+                            permissionId : $('#permissionId_edit').combobox('getValues').toString()
                         },
                         beforeSend : function() {
                             $.messager.progress({
@@ -290,32 +294,18 @@ $(function() {
     });
 
     $("input[name='permissionId']").combobox({
-        // url: '/admin/role/getRoles',
-        // method: 'get',
         multiple: true,
         mode: 'remote',
         valueField: 'id',
         textField: 'permissionName',
         panelHeight:'auto',
         loader: function (param,success,error) {
-            // var q = param.q || '';
-            // if (q.length <= 1){return false}
-            // console.log(param);
             $.ajax({
                 url: '/admin/role/getPermissions',
                 method: 'get',
                 dataType: 'json',
-                /*data: {
-                    featureClass: "P",
-                    style: "full",
-                    maxRows: 20,
-                    name_startsWith: q
-                },*/
                 success: function(data){
-                    // console.log(data);
                     var items = $.map(data.data, function(item){
-                        // console.log(item.id);
-                        // console.log(item.roleName);
                         return {
                             id: item.id,
                             permissionName: item.permissionName
@@ -329,4 +319,57 @@ $(function() {
             });
         }
     });
+    $(".tabs-inner").click(function(){
+        $("#permissionId_edit").combobox({
+            mode: 'remote',
+            valueField: 'id',
+            textField: 'permissionName',
+            panelHeight:'auto',
+            loader: function (param,success,error) {
+                $.ajax({
+                    url: '/admin/role/getPermissions',
+                    method: 'get',
+                    dataType: 'json',
+                    success: function(data){
+                        var items = $.map(data.data, function(item){
+                            return {
+                                id: item.id,
+                                permissionName: item.permissionName
+                            };
+                        });
+                        success(items);
+                    },
+                    error: function(){
+                        error.apply(this, arguments);
+                    }
+                });
+            }
+        });
+        $("#permissionId").combobox({
+            mode: 'remote',
+            valueField: 'id',
+            textField: 'permissionName',
+            panelHeight:'auto',
+            loader: function (param,success,error) {
+                $.ajax({
+                    url: '/admin/role/getPermissions',
+                    method: 'get',
+                    dataType: 'json',
+                    success: function(data){
+                        var items = $.map(data.data, function(item){
+                            return {
+                                id: item.id,
+                                permissionName: item.permissionName
+                            };
+                        });
+                        success(items);
+                    },
+                    error: function(){
+                        error.apply(this, arguments);
+                    }
+                });
+            }
+        });
+        $('#table_role').datagrid('reload');
+    })
 });

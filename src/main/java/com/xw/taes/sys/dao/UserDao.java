@@ -31,4 +31,10 @@ public interface UserDao extends CrudDao<User> {
      * @param roleId 角色id
      */
     void insertRole(@Param("userId") int userId,@Param("roleId") Integer roleId);
+
+    /**
+     * 删除该用户的角色
+     * @param userId 用户id
+     */
+    void deleteRoleByUserId(int userId);
 }

@@ -41,7 +41,6 @@
 </div>
 
 <form id="user_add" style="margin: 0;padding: 5px 0 0 25px;color: #333;">
-    <input class="textbox" name="id" id="id" type="hidden">
     <p>账号：<input class="textbox" name="userName" id="userName" type="text" style="width: 200px;"></p>
     <p>密码：<input class="textbox" name="password" id="password" type="password" style="width: 200px;"></p>
     <p>角色：<input class="easyui-combobox" name="roleId" id="roleId" style="width:250px"/></p>
@@ -49,10 +48,10 @@
 
 
 <form id="user_edit" style="margin: 0;padding: 5px 0 0 25px;color: #333;">
-    <input class="textbox" name="id_edit" id="id_edit" type="hidden">
+    <input class="textbox" name="user_id_edit" id="user_id_edit" type="hidden">
     <p>账号：<input class="textbox" name="userName_edit" disabled="disabled" id="wno" type="text" style="width: 200px;"></p>
     <p>密码：<input class="textbox" name="password_edit" id="wpassword" type="password" style="width: 200px;"></p>
-    <p>角色：<input class="easyui-combobox" name="roleId" id="roleId_edit" style="width:250px"/></p>
+    <p>角色：<input name="roleId" id="roleId_edit" style="width:250px"/></p>
 </form>
 
 

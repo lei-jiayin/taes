@@ -11,6 +11,12 @@ $(function() {
 			if (node.url) {
 				if ($('#tabs').tabs('exists',node.text)) {
 					$('#tabs').tabs('select',node.text);
+					$('#tabs').tabs('update',{
+						tab: $('#tabs').tabs('getSelected'),
+						options: {
+							href: node.url
+						}
+					});
 				}
 				else {
 					$('#tabs').tabs('add',{
@@ -30,8 +36,6 @@ $(function() {
 		border : false,
 		fit : true,
 	});
-	
-	
-	
+
 });
 

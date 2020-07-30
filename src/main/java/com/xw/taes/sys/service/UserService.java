@@ -13,12 +13,14 @@ public class UserService extends CrudService<UserDao, User>{
     @Override
     public int update(User user){
         int u = dao.update(user);
-        User user1 = dao.get(user);
+        dao.deleteRoleByUserId(user.getId());
+        dao.insertRole(user.getId(),user.getRoleId());
+        /*User user1 = dao.get(user);
         if (user1.getRoleId() != null && user1.getRoleId() > 0){
             dao.updateRole(user.getId(), user.getRoleId());
         }else {
             dao.insertRole(user.getId(),user.getRoleId());
-        }
+        }*/
         return u;
     }
 
