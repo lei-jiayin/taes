@@ -45,7 +45,7 @@ $(function() {
                     success : function(data,response,status) {
                         $.messager.progress('close');
                         if (data.code == 1) {
-                            // console.log(data);
+                            console.log(data);
                             // $("input[name='permissionId']").combobox("loadData", data.data.perId);
                             $('#menu_edit').form('load',{
                                 menu_id_edit : data.data.id,
@@ -53,7 +53,7 @@ $(function() {
                                 url_edit : data.data.url,
                                 state : data.data.state,
                                 tid : data.data.tid,
-                                roleId : data.data.roId
+                                roleId : data.data.roId ? data.data.roId:[]
                             }).dialog('open');
                         }else {
                             $.messager.alert('请求失败！','未知错误！请重试','warning');
@@ -128,7 +128,6 @@ $(function() {
                 title : '编号',
                 field : 'id',
                 width : 100,
-                sortable : true,
                 checkbox : true,
                 align : 'center'
             },
@@ -136,25 +135,21 @@ $(function() {
                 title : '菜单',
                 field : 'text',
                 width : 100,
-                sortable : true,
                 align : 'center'
             },{
                 title : '链接',
                 field : 'url',
                 width : 100,
-                sortable : true,
                 align : 'center'
             },{
                 title : '状态',
                 field : 'stateName',
                 width : 100,
-                sortable : true,
                 align : 'center'
             },{
                 title : '父菜单',
                 field : 'tidText',
                 width : 100,
-                sortable : true,
                 align : 'center'
             },{
                 title: '操作角色',
@@ -169,7 +164,7 @@ $(function() {
         pageSize : 5,
         pageList : [5,10,15,20],
         pagePosition : 'bottom',
-        sortName : 'n.tid',
+        sortName : 'tid',
         sortOrder : 'asc',
         remoteSort : true,
         toolbar : '#menu_tb'
@@ -195,7 +190,7 @@ $(function() {
                             url : $('input[name="url"]').val(),
                             state : $('#state').combobox('getValue').toString(),
                             tid : $('#tid').combobox('getValue').toString(),
-                            roleId : $('#roleId').combobox('getValue').toString()
+                            roleId : $('#roleId').combobox('getValues').toString()
                         },
                         beforeSend : function() {
                             $.messager.progress({
@@ -237,6 +232,7 @@ $(function() {
             text : '修改',
             iconCls : 'icon-edit',
             handler : function() {
+                // alert($('input[name="roleId"]').combobox('getValues').toString());
                 if ($('#menu_edit').form('validate')) {
                     $.ajax({
                         url : '/sys/menu/save',
@@ -247,7 +243,7 @@ $(function() {
                             url : $('input[name="url_edit"]').val(),
                             state : $('#state_edit').combobox('getValue').toString(),
                             tid : $('#tid_edit').combobox('getValue').toString(),
-                            roleId : $('#roleId_edit').combobox('getValue').toString()
+                            roleId : $('#roleId_edit').combobox('getValues').toString()
                         },
                         beforeSend : function() {
                             $.messager.progress({

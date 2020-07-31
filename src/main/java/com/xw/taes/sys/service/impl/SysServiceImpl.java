@@ -4,6 +4,7 @@ import com.xw.taes.sys.domain.WardenTree;
 import com.xw.taes.sys.dao.SysDao;
 import com.xw.taes.sys.service.SysService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,10 +46,8 @@ public class SysServiceImpl implements SysService {
     @Override
     public WardenTree get(Integer id) {
         WardenTree wardenTree = sysDao.get(id);
-        if (wardenTree.getRoleId() != null){
-            String roleId = wardenTree.getRoleId();
-            String[] rids = roleId.split(",");
-            wardenTree.setRoId(rids);
+        if (StringUtils.isNotBlank(wardenTree.getRoleId())){
+            wardenTree.setRoId(wardenTree.getRoleId().split(","));
         }
         return wardenTree;
     }

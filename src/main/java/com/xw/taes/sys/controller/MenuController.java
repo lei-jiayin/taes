@@ -77,6 +77,7 @@ public class MenuController {
     @PostMapping("/list")
     @ResponseBody
     public ReturnResult list(PageVto pageVto, WardenTree wardenTree){
+        pageVto.setOrder(pageVto.getSort() + " " + pageVto.getOrder());
         wardenTree.setPageVto(pageVto);
         List<WardenTree> wardenTrees = sysService.findList(wardenTree);
         ReturnResult<WardenTree> returnResult = new ReturnResult<>(UserResponseEnum.SUCCESS);

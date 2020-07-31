@@ -5,8 +5,7 @@
     <sql id="sort_sql">
         order
         by
-        #{pageVto.sort}
-        #{pageVto.order}
+        ${pageVto.order}
         limit
         #{pageVto.first},
         #{pageVto.rows}
@@ -29,20 +28,7 @@
         </where>
     </select>
     <select id="findCount" parameterType="com.xw.taes.sys.domain.WardenTree" resultType="int">
-        SELECT
-        count(1)
-        FROM
-        warden_nav n
-        LEFT JOIN t_sys_menu_role mr ON mr.menu_id = n.id
-        LEFT JOIN t_sys_role r ON mr.role_id = r.id
-        <where>
-            <if test="text != null and text != ''">
-                n.text like concat('%',#{text},'%')
-            </if>
-        </where>
-    </select>
-    <select id="findList" parameterType="com.xw.taes.sys.domain.WardenTree"
-            resultType="com.xw.taes.sys.domain.WardenTree">
+        select count(1) from (
         SELECT
         n.id,
         n.text,
@@ -62,6 +48,31 @@
             </if>
         </where>
         group by n.id
+        ) b
+    </select>
+    <select id="findList" parameterType="com.xw.taes.sys.domain.WardenTree"
+            resultType="com.xw.taes.sys.domain.WardenTree">
+        select * from (
+        SELECT
+        n.id,
+        n.text,
+        n.url,
+        n.state,
+        n.tid,
+        (select text from warden_nav where id = n.tid) tidText,
+        GROUP_CONCAT(r.id) roleId,
+        GROUP_CONCAT(r.role_name) roleName
+        FROM
+        warden_nav n
+        LEFT JOIN t_sys_menu_role mr ON mr.menu_id = n.id
+        LEFT JOIN t_sys_role r ON mr.role_id = r.id
+        <where>
+            <if test="text != null and text != ''">
+                n.text like concat('%',#{text},'%')
+            </if>
+        </where>
+        group by n.id
+        ) a
         <include refid="sort_sql"></include>
     </select>
 
@@ -73,8 +84,8 @@
             n.state,
             n.tid,
             (select text from warden_nav where id = n.tid) tidName,
-            GROUP_CONCAT(r.id) roleId,
-            GROUP_CONCAT(r.role_name) roleName
+            GROUP_CONCAT(r.id)                             roleId,
+            GROUP_CONCAT(r.role_name)                      roleName
         FROM
             warden_nav n
                 LEFT JOIN t_sys_menu_role mr ON mr.menu_id = n.id
@@ -100,14 +111,19 @@
     </insert>
 
     <select id="getTid" resultType="com.xw.taes.sys.domain.WardenTree">
-        select id tid,text,url,state from warden_nav where tid = 0
+        select id tid,text,url,state
+        from warden_nav
+        where tid = 0
     </select>
 
     <delete id="deleteRoleByMenuId" parameterType="int">
-        delete from t_sys_menu_role where menu_id = #{menuId}
+        delete
+        from t_sys_menu_role
+        where menu_id = #{menuId}
     </delete>
 
     <insert id="insertMenuRole">
-        insert into t_sys_menu_role (menu_id, role_id) values (#{menuId},#{roleId})
+        insert into t_sys_menu_role (menu_id, role_id)
+        values (#{menuId}, #{roleId})
     </insert>
 </mapper>

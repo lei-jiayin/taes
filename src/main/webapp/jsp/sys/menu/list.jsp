@@ -42,7 +42,7 @@
     <p>链接：<input class="textbox" name="url" id="url" type="text" style="width: 200px;"></p>
     <p>状态：<input class="easyui-combobox" name="state" id="state" type="text" style="width: 200px;"></p>
     <p>父菜单：<input class="easyui-combobox" name="tid" id="tid" style="width:250px"/></p>
-    <p>操作角色：<input class="easyui-combobox" name="roleId" id="roleId" style="width:250px"/></p>
+    <p>操作角色：<input name="roleId" id="roleId" style="width:250px"/></p>
     <%--<p>操作角色：<input class="easyui-combobox" name="menu_roleId" id="menu_roleId" style="width:250px"/></p>--%>
 </form>
 
@@ -53,7 +53,7 @@
     <p>链接：<input class="textbox" name="url_edit" id="url_edit" type="text" style="width: 200px;"></p>
     <p>状态：<input class="easyui-combobox" name="state" id="state_edit" type="text" style="width: 200px;"></p>
     <p>父菜单：<input class="easyui-combobox" name="tid" id="tid_edit" style="width:250px"/></p>
-    <p>操作角色：<input class="easyui-combobox" name="roleId" id="roleId_edit" style="width:250px"/></p>
+    <p>操作角色：<input name="roleId" id="roleId_edit" style="width:250px"/></p>
     <%--<p>操作角色：<input class="easyui-combobox" name="menu_roleId" id="menu_roleId_edit" style="width:250px"/></p>--%>
 </form>
 
