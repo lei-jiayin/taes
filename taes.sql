@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50728
 File Encoding         : 65001
 
-Date: 2020-07-31 11:41:38
+Date: 2020-07-31 16:04:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -264,28 +264,25 @@ INSERT INTO `scoredetails` VALUES ('10', '31', '5', '5');
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student` (
   `STUDENTID` int(11) NOT NULL AUTO_INCREMENT,
-  `STUDENTNO` varchar(100) DEFAULT NULL,
-  `STUDENTNAME` varchar(20) DEFAULT NULL,
-  `PROFESSIONALCLASS` varchar(20) DEFAULT NULL,
-  `PROFESSION` varchar(20) DEFAULT NULL,
-  `COLLEGE` varchar(20) DEFAULT NULL,
-  `PASSWORD` varchar(100) DEFAULT NULL,
+  `STUDENTNO` varchar(100) DEFAULT NULL COMMENT '学生编号 年后两位+年级+班级+班级排名 eg:20A01001 20届高一一班排名001',
+  `STUDENTNAME` varchar(20) DEFAULT NULL COMMENT '学生名称',
+  `USER_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`STUDENTID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of student
 -- ----------------------------
-INSERT INTO `student` VALUES ('1', '142302001', '张瑶', '软工1401班', '软件工程', '信息工程学院', '6f2e13b4563f19300c312f40c0f5d257');
-INSERT INTO `student` VALUES ('2', '142302002', '朱亮', '软工1401班', '软件工程', '信息工程学院', '5986211e8cfa5336e2b79297b9c8d17e');
-INSERT INTO `student` VALUES ('3', '142302003', '吴云瑞', '软工1401班', '软件工程', '信息工程学院', '272e2e547b7f759941b4cc7affb198db');
-INSERT INTO `student` VALUES ('4', '142302004', '苏伟', '软工1401班', '软件工程', '信息工程学院', 'bf0e8d9a324d67bc8cb17d2557482406');
-INSERT INTO `student` VALUES ('5', '142302005', '周禹', '软工1401班', '软件工程', '信息工程学院', '20acf99520153b275cc56632ec41fde8');
-INSERT INTO `student` VALUES ('6', '142302006', '沈显锋', '软工1401班', '软件工程', '信息工程学院', '6163f044382df6d7ad4d8b1e13ee4e95');
-INSERT INTO `student` VALUES ('7', '142302007', '周超', '软工1401班', '软件工程', '信息工程学院', '1dcf33d260796d60e0fbab74df293a92');
-INSERT INTO `student` VALUES ('8', '142302008', '裴恒意', '软工1401班', '软件工程', '信息工程学院', '0fbf4b078e6cce9c82faae8bd5f95ccc');
-INSERT INTO `student` VALUES ('9', '142302009', '张新佳', '软工1401班', '软件工程', '信息工程学院', 'da219af21c7e240784c39e6375fe3fca');
-INSERT INTO `student` VALUES ('10', '142302010', '杨明', '软工1401班', '软件工程', '信息工程学院', '0f723e3cb07dbc045ad411ac36bc041c');
+INSERT INTO `student` VALUES ('1', '20A01001', '张瑶', '5');
+INSERT INTO `student` VALUES ('2', '20A01002', '朱亮', null);
+INSERT INTO `student` VALUES ('3', '20A01003', '吴云瑞', null);
+INSERT INTO `student` VALUES ('4', '20A01004', '苏伟', null);
+INSERT INTO `student` VALUES ('5', '20A01005', '周禹', null);
+INSERT INTO `student` VALUES ('6', '20A01006', '沈显锋', null);
+INSERT INTO `student` VALUES ('7', '20A01007', '周超', null);
+INSERT INTO `student` VALUES ('8', '20A01008', '裴恒意', null);
+INSERT INTO `student` VALUES ('9', '20A01009', '张新佳', null);
+INSERT INTO `student` VALUES ('10', '20A01010', '杨明', null);
 
 -- ----------------------------
 -- Table structure for student_nav
@@ -476,7 +473,7 @@ CREATE TABLE `t_sys_user` (
   `password` varchar(50) DEFAULT NULL COMMENT '密码',
   `type` varchar(4) DEFAULT '0' COMMENT '类型 0 系统管理员 1 管理员 2 教师 3 学生',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_sys_user
@@ -485,6 +482,7 @@ INSERT INTO `t_sys_user` VALUES ('1', '1001', '123', '0');
 INSERT INTO `t_sys_user` VALUES ('2', '1002', '234', '0');
 INSERT INTO `t_sys_user` VALUES ('3', '1003', '234', null);
 INSERT INTO `t_sys_user` VALUES ('4', '18827636379', '789', null);
+INSERT INTO `t_sys_user` VALUES ('5', '20A01001', '123', '0');
 
 -- ----------------------------
 -- Table structure for t_sys_user_role

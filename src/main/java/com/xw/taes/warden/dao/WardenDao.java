@@ -25,7 +25,8 @@ public interface WardenDao extends CrudDao<Warden> {
 
 	List<Warden> find(Warden warden);
 
-	int findCount(Warden warden);
+	@Override
+    int findCount(Warden warden);
 
 	Warden findById(int getwId);
 

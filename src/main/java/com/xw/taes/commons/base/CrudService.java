@@ -1,5 +1,7 @@
 package com.xw.taes.commons.base;
 
+import com.xw.taes.commons.vto.PageVto;
+import com.xw.taes.commons.vto.ReturnResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -53,11 +55,13 @@ public abstract class CrudService<D extends CrudDao<T>, T extends DataEntity<T>>
      * @param entity
      * @return
      */
-   /* public PageVto<T> findPage(PageVto<T> pageVto, T entity) {
+    public ReturnResult findPage(PageVto pageVto, T entity) {
+        ReturnResult<T> rr = new ReturnResult<>();
         entity.setPageVto(pageVto);
-        pageVto.setList(dao.findList(entity));
-        return pageVto;
-    }*/
+        rr.setRows(dao.findList(entity));
+        rr.setTotal(dao.findCount(entity));
+        return rr;
+    }
 
    @Transactional(readOnly = false)
    public int update(T entity){
