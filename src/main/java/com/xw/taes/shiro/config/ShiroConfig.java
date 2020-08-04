@@ -2,12 +2,18 @@ package com.xw.taes.shiro.config;
 
 import com.xw.taes.shiro.realm.CustomRealm;
 import org.apache.shiro.codec.Base64;
+import org.apache.shiro.session.mgt.SessionManager;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
+import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
+import org.crazycake.shiro.RedisCacheManager;
+import org.crazycake.shiro.RedisManager;
+import org.crazycake.shiro.RedisSessionDAO;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
@@ -57,12 +63,67 @@ public class ShiroConfig {
         return cookieRememberMeManager;
     }
 
+    /**
+     * 使用shiro-redis 插件实现redisManager
+     * @return redisManager
+     */
+    @Bean
+    protected RedisManager redisManager(){
+        RedisManager redisManager = new RedisManager();
+        redisManager.setHost("127.0.0.1");
+        redisManager.setPort(6379);
+        redisManager.setTimeout(0);
+        // 配置缓存过期时间
+        redisManager.setExpire(1800);
+        return redisManager;
+    }
+
+    /**
+     * cacheManager 缓存的 redis实现
+     * shiro-redis
+     * @return
+     */
+    @Bean
+    public RedisCacheManager redisCacheManager(){
+        RedisCacheManager redisCacheManager = new RedisCacheManager();
+        redisCacheManager.setKeyPrefix("s_r_taes:");
+        redisCacheManager.setRedisManager(redisManager());
+        return redisCacheManager;
+    }
+
+    /**
+     * sessiongManager
+     * shiro-redis
+     * @return
+     */
+    @Bean
+    public DefaultWebSessionManager sessionManager(){
+        CustomSessionManager sessionManager = new CustomSessionManager();
+        sessionManager.setSessionDAO(redisSessionDAO());
+        return sessionManager;
+    }
+
+    /**
+     * redis session 数据操作
+     * @return
+     */
+    @Bean
+    public RedisSessionDAO redisSessionDAO(){
+        RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
+        redisSessionDAO.setRedisManager(redisManager());
+        return redisSessionDAO;
+    }
+
     //权限管理，配置主要是Realm的管理认证
     @Bean
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(myShiroRealm());
         securityManager.setRememberMeManager(cookieRememberMeManager());
+        //redis 实现缓存
+        securityManager.setCacheManager(redisCacheManager());
+        //redis 实现会话管理
+        securityManager.setSessionManager(sessionManager());
+        securityManager.setRealm(myShiroRealm());
         return securityManager;
     }
 
@@ -95,12 +156,21 @@ public class ShiroConfig {
         return shiroFilterFactoryBean;
     }
 
-
+    /**
+     * 开启授权注解
+     * @param securityManager
+     * @return
+     */
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager) {
         AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
         authorizationAttributeSourceAdvisor.setSecurityManager(securityManager);
         return authorizationAttributeSourceAdvisor;
+    }
+
+    @Bean
+    public LifecycleBeanPostProcessor getLifecycleBeanPostProcessor(){
+        return new LifecycleBeanPostProcessor();
     }
 
 }

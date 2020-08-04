@@ -8,6 +8,17 @@ spring:
     view:
       prefix: /jsp
       suffix: .jsp
+  #redis的配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
+    timeout: 0
 
 #配置mybatis的信息
 #spring集成mybatis环境
