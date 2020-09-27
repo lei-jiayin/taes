@@ -24,6 +24,9 @@
 				<div class="logo">
 					Taes管理系统
 				</div>
+				<div class="">
+					当前天气情况为：
+				</div>
 				<div class="logout">
 					您好，<span>${userName}</span>|<a href="/admin/logout">退出</a>
 				</div>

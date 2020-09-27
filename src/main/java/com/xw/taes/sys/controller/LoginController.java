@@ -10,6 +10,7 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.authz.annotation.RequiresUser;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * 登录控制
@@ -66,6 +68,11 @@ public class LoginController {
         User user = loginService.getUserByName(name);
         model.addAttribute("userName", user.getUserName());
         return "/index";
+    }
+
+    @JmsListener(destination = "${myqueue}")
+    public void getWeather(String map){
+        System.out.println(map);
     }
 
     /**

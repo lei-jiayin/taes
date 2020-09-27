@@ -1,6 +1,12 @@
 # @date 2020/7/17 11:19
 #配置jsp文件位置
 spring:
+  activemq:
+    broker-url: tcp://192.168.160.128:61616
+    user: admin
+    password: admin
+  jms:
+      pub-sub-domain: false
   thymeleaf:
     cache: false
     enabled: false
@@ -31,3 +37,8 @@ logging:
   config: classpath:log4j2-spring.xml
   level:
     com.xw.taes.*.dao: debug
+
+
+
+myqueue: activemq-queue
+mytopic: activemq-topic
