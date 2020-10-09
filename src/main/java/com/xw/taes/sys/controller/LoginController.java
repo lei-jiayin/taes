@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationException;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.authz.annotation.RequiresUser;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,13 +15,11 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * 登录控制
@@ -70,13 +67,13 @@ public class LoginController {
         String name = subject.getPrincipal().toString();
         User user = loginService.getUserByName(name);
         model.addAttribute("userName", user.getUserName());
-        String weather = (String) redisTemplate.boundValueOps("weather").get();
+        String weather = redisTemplate.boundValueOps("weather").get();
         model.addAttribute("weather",weather);
         return "/index";
     }
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
     /**
      * 将天气信息写入缓存
