@@ -16,7 +16,8 @@ spring:
       suffix: .jsp
   #redis的配置
   redis:
-    host: 127.0.0.1
+    host: 192.168.160.128
+#    host: 127.0.0.1
     port: 6379
     jedis:
       pool:
