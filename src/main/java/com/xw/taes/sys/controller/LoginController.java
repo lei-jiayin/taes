@@ -67,19 +67,19 @@ public class LoginController {
         String name = subject.getPrincipal().toString();
         User user = loginService.getUserByName(name);
         model.addAttribute("userName", user.getUserName());
-        String weather = redisTemplate.boundValueOps("weather").get();
-        model.addAttribute("weather",weather);
+        // String weather = redisTemplate.boundValueOps("weather").get();
+        // model.addAttribute("weather",weather);
         return "/index";
     }
 
-    @Autowired
-    private RedisTemplate<String, String> redisTemplate;
+    // @Autowired
+    // private RedisTemplate<String, String> redisTemplate;
 
     /**
      * 将天气信息写入缓存
      * @param map
      */
-    @JmsListener(destination = "${myqueue}")
+    /*@JmsListener(destination = "${myqueue}")
     public void getWeather(String map){
         System.out.println(map);
         // String weather = (String) redisTemplate.boundValueOps("weather").get();
@@ -92,7 +92,7 @@ public class LoginController {
                 e.printStackTrace();
             }
         // }
-    }
+    }*/
 
     /**
      * shiro 退出登录流程

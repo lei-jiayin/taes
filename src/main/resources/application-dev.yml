@@ -2,7 +2,7 @@
 #配置jsp文件位置
 spring:
   activemq:
-    broker-url: tcp://192.168.160.128:61616
+    broker-url: tcp://192.168.160.129:61616
     user: admin
     password: admin
   jms:
@@ -16,7 +16,7 @@ spring:
       suffix: .jsp
   #redis的配置
   redis:
-    host: 192.168.160.128
+    host: 192.168.160.129
 #    host: 127.0.0.1
     port: 6379
     jedis:
@@ -26,6 +26,11 @@ spring:
         min-idle: 0
         max-wait: -1
     timeout: 0
+  cache:
+    type: ehcache
+    ehcache:
+#      config: classpath:ehcache-failsafe.xml
+      config: classpath:ehcache.xml
 
 #配置mybatis的信息
 #spring集成mybatis环境

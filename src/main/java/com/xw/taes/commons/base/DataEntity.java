@@ -5,6 +5,7 @@ import com.xw.taes.commons.vto.PageVto;
 import com.xw.taes.sys.domain.User;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Date;
  * @date 2020/7/21 17:30
  */
 @Data
-public abstract class DataEntity<T> {
+public abstract class DataEntity<T> implements Serializable {
     protected String remarks;	// 备注
     protected User createBy;	// 创建者
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

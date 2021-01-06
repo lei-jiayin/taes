@@ -1,11 +1,15 @@
 package com.xw.taes.sys.service.impl;
 
+import com.xw.taes.commons.util.EhcacheUtil;
 import com.xw.taes.sys.domain.WardenTree;
 import com.xw.taes.sys.dao.SysDao;
 import com.xw.taes.sys.service.SysService;
 import lombok.extern.slf4j.Slf4j;
+import net.sf.ehcache.Cache;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,12 +29,20 @@ public class SysServiceImpl implements SysService {
     public SysDao sysDao;
 
     @Override
+    @Cacheable(value = "NAV", key = "'nav-' + #id")
     public List<WardenTree> getNav(String id, String[] roleIdss) {
-        List<WardenTree> data = sysDao.getNav(id, roleIdss);
-        if (data != null && data.size() > 0){
+
+        /*Object cache = EhcacheUtil.getInstance().get("NAV","nav-"+ id);
+        if (cache == null){
+            List<WardenTree> data = sysDao.getNav(id, roleIdss);
+            EhcacheUtil.getInstance().put("NAV","nav-"+ id, data);
             return data;
-        }
-        return null;
+        }else {
+            return (List<WardenTree>) cache;
+        }*/
+
+        List<WardenTree> data = sysDao.getNav(id, roleIdss);
+        return data;
     }
 
     @Override
