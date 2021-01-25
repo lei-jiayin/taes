@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletRequest;
  * @author adv
  * @date 2021/1/25 9:47
  */
-@EnableAspectJAutoProxy
 @Aspect
 @Component
 @Slf4j

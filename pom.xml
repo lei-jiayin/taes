@@ -173,11 +173,13 @@
             <artifactId>activemq-pool</artifactId>
             <version>${activemq.pool.version}</version>
         </dependency>
+        <!--支持AOP相关注解-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>1.9.4</version>
         </dependency>
+        <!--支持AOP切入点表达式-->
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
