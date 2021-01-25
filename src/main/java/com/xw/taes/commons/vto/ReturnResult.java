@@ -1,6 +1,7 @@
 package com.xw.taes.commons.vto;
 
 import com.xw.taes.commons.exception.UserResponseEnum;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import net.sf.json.JSON;
 import net.sf.json.JSONObject;
@@ -19,10 +20,15 @@ import java.util.Map;
  */
 @Data
 public class ReturnResult<T> {
+    @ApiModelProperty("状态码 0失败 1成功 ")
     private String code;
+    @ApiModelProperty("返回信息")
     private String message;
+    @ApiModelProperty("返回Object数据")
     private Object data;
+    @ApiModelProperty("返回map数据")
     private Map<String, Object> map;
+    @ApiModelProperty("返回list数据")
     private List<T> rows;
     private int total;
     //private int pageVto;

@@ -7,6 +7,8 @@ import com.xw.taes.sys.domain.User;
 import com.xw.taes.sys.service.RoleService;
 import com.xw.taes.sys.service.UserService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,12 +32,15 @@ public class UserController {
     @Autowired
     private RoleService roleService;
 
+    @RequiresRoles("root")
     @GetMapping("/list")
     public String index(){
         return "/sys/user/list";
     }
 
+    @RequiresRoles("root")
     @PostMapping("/list")
+    @ApiOperation(value = "展示用户列表")
     @ResponseBody
     public ReturnResult list(PageVto pageVto, User user){
         user.setPageVto(pageVto);
@@ -47,14 +52,18 @@ public class UserController {
         return returnResult;
     }
 
+    @RequiresRoles("root")
     @PostMapping("/edit")
+    @ApiOperation(value = "获取要修改的用户信息")
     @ResponseBody
     public ReturnResult edit(Integer id){
         User user1 = userService.get(id);
         return new ReturnResult("1",user1);
     }
 
+    @RequiresRoles("root")
     @PostMapping("/save")
+    @ApiOperation(value = "保存管理员信息")
     @ResponseBody
     public ReturnResult save(User user){
         int n;

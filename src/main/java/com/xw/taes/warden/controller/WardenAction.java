@@ -75,6 +75,7 @@ public class WardenAction extends BaseAction {
 	 */
 	@RequiresRoles("root")
 	@RequiresPermissions("root:edit")
+	@ApiOperation(value = "保存管理员信息", notes = "传入warden")
 	@PostMapping("/save")
 	@ResponseBody
 	public ReturnResult update(Warden warden){
@@ -98,6 +99,7 @@ public class WardenAction extends BaseAction {
 	 * @return 页面
 	 */
 	@RequiresRoles("root")
+	@ApiOperation(value = "跳转到管理员列表")
 	@GetMapping("/mwarden")
 	public String mWarden(){
 		return "/warden/mwarden";
@@ -109,6 +111,7 @@ public class WardenAction extends BaseAction {
 	 * @return
 	 */
 	@RequiresRoles("root")
+	@ApiOperation(value = "管理员列表查询")
 	@PostMapping("mwarden")
 	@ResponseBody
 	public ReturnResult mWarden(PageVto pageVto, Warden warden){

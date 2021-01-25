@@ -5,6 +5,8 @@ import com.xw.taes.commons.vto.PageVto;
 import com.xw.taes.commons.vto.ReturnResult;
 import com.xw.taes.warden.domain.Student;
 import com.xw.taes.warden.service.StudentManageService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author adx
  * @date 2020/7/31 14:49
  */
+@Api(tags = "studentManageController", description = "学生信息管理")
 @Controller
 @RequestMapping("/warden/student")
 public class StudentManageController {
@@ -32,6 +35,7 @@ public class StudentManageController {
         return "/warden/student/list";
     }
 
+    @ApiOperation("查询学生信息分页列表")
     @PostMapping("/list")
     @ResponseBody
     public ReturnResult list(PageVto pageVto, Student student){
