@@ -19,7 +19,7 @@
         <mysql-connect-java.version>5.1.16</mysql-connect-java.version>
         <poi.version>4.1.1</poi.version>
         <swagger.version>2.9.2</swagger.version>
-        <shiro-spring.vaersion>1.5.3</shiro-spring.vaersion>
+        <shiro-spring.vaersion>1.7.1</shiro-spring.vaersion>
         <jedis.version>2.9.0</jedis.version>
         <activemq.pool.version>5.15.0</activemq.pool.version>
     </properties>
